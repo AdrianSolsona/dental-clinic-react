@@ -1,12 +1,12 @@
-import { Navbar } from "react-bootstrap"
-import FormLogin from "../../components/FormLogin"
 
+import FormLogin from "../../components/FormLogin"
+import { NavBar } from "../../components/NavBar"
 
 
 export const Login = () => {
     return (
         <>
-        <Navbar/>
+        <NavBar/>
         <h1>Login</h1>
         <FormLogin/>
         </>

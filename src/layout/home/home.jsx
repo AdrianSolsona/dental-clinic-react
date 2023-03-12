@@ -1,7 +1,6 @@
 
 import React from 'react'
-import TarjetGrid from '../../components/CardGrid';
-import { NavBar } from '../../components/Navbar';
+import { NavBar } from '../../components/NavBar';
 
 
 

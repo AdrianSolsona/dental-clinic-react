@@ -1,12 +1,12 @@
-import { Navbar } from "react-bootstrap"
+
 import FormRegister from "../../components/FormRegister"
+import { NavBar } from "../../components/NavBar"
 
 
 export const Register = () => {
     return (
         <>
-        <h1>Register</h1>
-        <Navbar/>
+        <NavBar/>
         <FormRegister/>
         </>
     )
