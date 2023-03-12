@@ -16,7 +16,7 @@ export const NavBar = () => {
                     <Link className='link-name' to='/home'>Home</Link>
                     <Link className='link-name' to='/register'>Register</Link>
                     <Link className='link-name' to='/login'>Login</Link>
-                    <Link className='link-name' to='/treatments'>Treatments</Link>
+                    <Link className='link-name' to='/treatments'>Tratamientos</Link>
                     </Nav>
                 </Container>
             </Navbar>
