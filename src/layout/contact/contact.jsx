@@ -5,7 +5,7 @@ import { NavBar } from '../../components/Navbar/NavBar';
 
 
 
-export const Home = () => {
+export const Contact = () => {
     return (
         <>
             <NavBar/>

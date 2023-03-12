@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { NavBar } from '../../components/Navbar/NavBar';
+import './Home.css'
 
 
 
@@ -8,7 +9,11 @@ import { NavBar } from '../../components/Navbar/NavBar';
 export const Home = () => {
     return (
         <>
-            <NavBar/>
+        <NavBar/>
+        <div className='cont-discount'>
+            hola
+        </div>
         </>
+        
     )
 };

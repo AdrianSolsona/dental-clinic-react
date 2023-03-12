@@ -26,8 +26,11 @@ import React from 'react'
 import { NavBar } from '../components/Navbar/NavBar'
 import { Route, Routes } from 'react-router-dom'
 import { Home } from '../layout/home/Home'
-import { Login } from '../layout/login/login'
+import { Login } from '../layout/login/Login'
 import { Register } from '../layout/register/Register'
+import { Contact } from '../layout/contact/contact'
+import { Treatment } from '../layout/Treatments/Treatments'
+
 
 
 
@@ -38,6 +41,8 @@ export const MainApp = () => {
         <Route path='/home' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
+        <Route path='/register' element={<Contact/>}/>
+        <Route path='/register' element={<Treatment/>}/>
     </Routes>
     </>
   )

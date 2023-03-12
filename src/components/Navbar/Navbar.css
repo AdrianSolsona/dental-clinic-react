@@ -1,3 +1,18 @@
-.me-auto{
-    background-color: red;
+.all-nav{
+    background-color: white;
+}
+
+.nav-menu{
+    gap: 1.5rem;
+}
+.link-title{
+    font-family: 'Phudu', cursive;
+    font-size: 3rem;
+    color: rgb(26, 101, 199);
+}
+.link-name{
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+    color: rgb(26, 101, 199);
+    font-weight: 600;
 }

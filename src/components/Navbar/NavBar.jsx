@@ -9,13 +9,14 @@ import "./Navbar.css"
 export const NavBar = () => {
     return (
         <>
-            <Navbar bg="dark" variant="dark">
+            <Navbar className='all-nav'>
                 <Container>
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-                    <Nav className="me-auto">
-                    <Link to='/register'>Home</Link>
-                    <Link to='/home'>Register</Link>
-                    <Link to='/login'>Login</Link>
+                    <Navbar.Brand className='link-title'>FACTORDENT</Navbar.Brand>
+                    <Nav className="nav-menu">
+                    <Link className='link-name' to='/home'>Home</Link>
+                    <Link className='link-name' to='/register'>Register</Link>
+                    <Link className='link-name' to='/login'>Login</Link>
+                    <Link className='link-name' to='/treatments'>Treatments</Link>
                     </Nav>
                 </Container>
             </Navbar>
