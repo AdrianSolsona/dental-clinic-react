@@ -40,6 +40,36 @@ export const Home = () => {
                 </div>
             </div>
         </div>
+        <div className='confidence-all'>
+            <p className='our-data'>Nuestro datos nos respaldan</p>
+            <p className='are-confidence'>Somos tu clínica dental de confianza</p>
+            <div className='general-data'>
+                <div className='more-data'>
+                    <p className='number-data'>+33</p>
+                    <p className='data-all'>años de experiencia</p>
+                </div>
+                <div className='more-data'>
+                    <p className='number-data'>+20</p>
+                    <p className='data-all'>tratamientos dentales</p>
+                </div>
+                <div className='more-data'>
+                    <p className='number-data'>+300</p>
+                    <p className='data-all'>euros en descuentos disponibles</p>
+                </div>
+                <div className='more-data'>
+                    <p className='number-data'>+250000</p>
+                    <p className='data-all'>pacientes tratados en clínica</p>
+                </div>
+            </div>
+        </div>
+        <div className='all-treatments'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         </>
         
     )
