@@ -43,7 +43,8 @@
 .appointment-free{
     font-family: 'Exo', sans-serif;
     font-weight: 500;
-    background-color: rgb(26, 101, 199);
+    background-color: rgb(3, 45, 101);
+    border-color: rgb(3, 45, 101);
 }
 .information{
     color: rgb(26, 101, 199);
@@ -91,6 +92,7 @@
     font-family: 'Exo', sans-serif;
     background-color: white;
     color: rgb(3, 45, 101);
+    border-color: white;
     margin-left: 6rem;
     position: absolute;
     margin-top: 10rem;
@@ -133,4 +135,49 @@
 .data-all{
     color: rgb(64, 64, 64);
     font-weight: 600;
+}
+.know-treatments{
+    display: flex;
+    position: relative;
+    left: 15.2%;
+    flex-direction: column;
+    margin-top: 7rem;
+}
+.all-treatments{
+    display: grid;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+.all-treatments-row{
+    display: flex;
+    gap: 2rem;
+}
+.treatment-single{
+    width: 30rem;
+    height: 25rem;
+    border-radius: 0.2rem; 
+}
+.cont-treatment{
+    margin-left: 2rem;
+    width: 18rem;
+}
+.img-logo{
+    width: 4.2rem;
+    margin-top: 3rem;
+}
+.title-treatment{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(3, 45, 101);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.text-treatment{
+    color: rgb(64, 64, 64);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+}
+.arrow{
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
 }
