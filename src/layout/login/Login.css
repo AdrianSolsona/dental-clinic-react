@@ -1,0 +1,47 @@
+.all-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 7rem;
+}
+.form-info{
+    width: 25rem;
+}
+.container-icon{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+.icon-login{
+    font-size: 4rem;
+    color: rgb(3, 45, 101);
+}
+.input-form{
+    font-family: 'Exo', sans-serif; 
+}
+.input-form::placeholder{
+    color:rgb(185, 185, 185);
+    font-weight: 500;
+}
+.text-muted{
+    font-family: 'Exo', sans-serif;
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+
+}
+.btn-login{
+    background-color: rgb(3, 45, 101);
+    border-color: rgb(3, 45, 101);
+    font-family: 'Exo', sans-serif;
+    width: 5rem;
+    margin-top: 2rem;
+}
+.btn-login:hover{
+    background-color: rgba(255, 255, 255, 0.74);
+    color: rgb(3, 45, 101);
+    font-family: 'Exo', sans-serif;
+}
