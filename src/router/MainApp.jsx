@@ -23,7 +23,6 @@ export const rutas = createBrowserRouter([
 ]);
 */
 import React from 'react'
-import { NavBar } from '../components/Navbar/NavBar'
 import { Route, Routes } from 'react-router-dom'
 import { Home } from '../layout/home/Home'
 import { Login } from '../layout/login/Login'
