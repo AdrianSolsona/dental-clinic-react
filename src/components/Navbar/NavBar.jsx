@@ -2,8 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React from 'react'
-import { Link } from 'react-router-dom'
 import "./Navbar.css"
+import { Navigator } from '../Navigator/Navigator';
 
 
 export const NavBar = () => {
@@ -13,10 +13,10 @@ export const NavBar = () => {
                 <Container>
                     <Navbar.Brand className='link-title'>FACTORDENT</Navbar.Brand>
                     <Nav className="nav-menu">
-                    <Link className='link-name' to='/home'>Home</Link>
-                    <Link className='link-name' to='/register'>Register</Link>
-                    <Link className='link-name' to='/login'>Login</Link>
-                    <Link className='link-name' to='/treatments'>Tratamientos</Link>
+                    <Navigator ruta={"Home"} destino={"/home"} />
+                    <Navigator ruta={"Login"} destino={"/login"} />
+                    <Navigator ruta={"Register"} destino={"/register"} />
+                    <Navigator ruta={"Treatments"} destino={"/treatments"} />
                     </Nav>
                 </Container>
             </Navbar>
