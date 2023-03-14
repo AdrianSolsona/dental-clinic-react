@@ -9,6 +9,7 @@ import odontology from '../../assets/odontologia-general.jpg'
 import dentalEstetic from '../../assets/estetica-dental.jpg'
 import './Home.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Footer } from '../../components/Footer/Footer';
 
 export const Home = () => {
     return (
@@ -70,7 +71,7 @@ export const Home = () => {
         </div>
         <Container className='all-treatments'>
       <Row className='all-treatments-row'>
-        <Col className='treatment-single' xs>
+        <Col className='treatment-single'>
             <div className='cont-treatment'>
                 <img className='img-logo' src={implantImage} alt=""/>
                 <div className='title-treatment'>Implantología</div>
@@ -78,7 +79,7 @@ export const Home = () => {
                 <Button className='appointment-free'>Saber más <i class="bi bi-chevron-right arrow"></i> </Button>
             </div>
         </Col>
-        <Col className='treatment-single' xs>
+        <Col className='treatment-single'>
         <div className='cont-treatment'>
             <img className='img-logo' src={dentalProtesis} alt=""/>
             <div className='title-treatment'>Prótesis dentales</div>
@@ -86,7 +87,7 @@ export const Home = () => {
             <Button className='appointment-free'>Saber más <i class="bi bi-chevron-right arrow"></i> </Button>
         </div>
         </Col>
-        <Col className='treatment-single' xs>
+        <Col className='treatment-single'>
             <div className='cont-treatment'>
                 <img className='img-logo' src={orthodontic} alt=""/>
                 <div className='title-treatment'>Ortodoncia</div>
@@ -122,6 +123,7 @@ export const Home = () => {
         </Col>
       </Row>
     </Container>
+    <Footer/>
     
     </>
         
