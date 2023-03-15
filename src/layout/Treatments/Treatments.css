@@ -1,3 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 .titles{
     font-size: 2rem;
     font-family: 'Exo', sans-serif;
@@ -7,6 +17,7 @@
     margin-left: 1.7rem;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
+    width: 100%;
 }
 .arrow-title{
     font-size: 3.2rem;
@@ -15,6 +26,7 @@
 }
 .container-all-card{
     display: flex;
+    width: 100%;
 }
 .card-container{
     margin-top: 3rem;

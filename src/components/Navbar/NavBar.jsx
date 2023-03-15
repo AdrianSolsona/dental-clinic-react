@@ -1,5 +1,4 @@
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React from 'react'
 import "./Navbar.css"
@@ -10,15 +9,17 @@ export const NavBar = () => {
     return (
         <>
             <Navbar className='all-nav'>
-                <Container>
-                    <Navbar.Brand className='link-title'>FACTORDENT</Navbar.Brand>
-                    <Nav className="nav-menu">
-                    <Navigator ruta={"Home"} destino={"/home"} />
-                    <Navigator ruta={"Login"} destino={"/login"} />
-                    <Navigator ruta={"Register"} destino={"/register"} />
-                    <Navigator ruta={"Treatments"} destino={"/treatments"} />
-                    </Nav>
-                </Container>
+                <div className='row-nav'>
+                    <div className='factordent'>
+                    <div className='link-title'>FACTORDENT</div>
+                    </div>
+                    <div className='nav-init'>
+                        <Navigator ruta={"Inicio"} destino={"/home"} />
+                        <Navigator ruta={"Tratamientos"} destino={"/treatments"} />
+                        <Navigator ruta={"Registro"} destino={"/register"} />
+                        <Navigator ruta={"Inicio sesion"} destino={"/login"} />
+                    </div>
+                </div>  
             </Navbar>
         </>
     )

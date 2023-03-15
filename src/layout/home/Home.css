@@ -1,3 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.navigator{
+    width: 100%;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .cont-discount{
     width: 100%;
     height: 25rem;
@@ -12,7 +26,7 @@
     left: 19%;
 }
 .discount{
-    width: 30rem;
+    width: 30%;
     margin-left: 25rem;
     margin-top: 1.5rem;
     
@@ -108,6 +122,10 @@
     font-size: 1.1rem;
     color: rgb(64, 64, 64);
     font-weight: 600;
+}
+.know-treatments{
+    width: 60%;
+    margin: 0;
 }
 .are-confidence{
     font-size: 1.9rem;

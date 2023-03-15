@@ -14,7 +14,7 @@ import { Footer } from '../../components/Footer/Footer';
 export const Home = () => {
     return (
         <>
-        <NavBar/>
+        <NavBar className='navigator'/>
         <div className='cont-discount'>
             <div className='picture-people'>
                 <img src= {peopleSunrise} alt="" />
@@ -124,7 +124,6 @@ export const Home = () => {
       </Row>
     </Container>
     <Footer/>
-    
     </>
         
     )
