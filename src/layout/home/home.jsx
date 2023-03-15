@@ -76,7 +76,7 @@ export const Home = () => {
                 <img className='img-logo' src={implantImage} alt=""/>
                 <div className='title-treatment'>Implantología</div>
                 <p className='text-treatment'>Utilizamos implantes europeos de primera calidad, que tienen una<strong> tasa de éxito</strong> del 99% y que no se distinguen del resto de tus dientes.</p>
-                <Button className='appointment-free'>Saber más <i class="bi bi-chevron-right arrow"></i> </Button>
+                <Button className='appointment-free'>Saber más <i class="bi bi-chevron-right arrow"></i></Button>
             </div>
         </Col>
         <Col className='treatment-single'>
@@ -84,7 +84,7 @@ export const Home = () => {
             <img className='img-logo' src={dentalProtesis} alt=""/>
             <div className='title-treatment'>Prótesis dentales</div>
             <p className='text-treatment'>Colocamos prótesis que son muy naturales, no se notan, duran <strong>hasta 15 años</strong>  y te permiten volver a sonreír y comer con normalidad.</p>
-            <Button className='appointment-free'>Saber más <i class="bi bi-chevron-right arrow"></i> </Button>
+            <Button className='appointment-free'>Saber más <i classname="bi bi-chevron-right arrow"></i> </Button>
         </div>
         </Col>
         <Col className='treatment-single'>

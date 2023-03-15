@@ -1,0 +1,16 @@
+.titles{
+    font-size: 2rem;
+    font-family: 'Exo', sans-serif;
+    font-weight: 600;
+    color: rgb(3, 45, 101);
+    display: flex;
+    position: relative;
+    left: 17.5%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.arrow-title{
+    font-size: 3.2rem;
+    display: flex;
+    color: rgb(26, 101, 199);
+}

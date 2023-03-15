@@ -40,8 +40,8 @@ export const MainApp = () => {
         <Route path='/home' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/register' element={<Contact/>}/>
-        <Route path='/register' element={<Treatment/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/treatments' element={<Treatment/>}/>
     </Routes>
     </>
   )
