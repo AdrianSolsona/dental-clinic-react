@@ -10,6 +10,8 @@ import dentalEstetic from '../../assets/estetica-dental.jpg'
 import './Home.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Footer } from '../../components/Footer/Footer';
+import CardComponent from '../../components/Card/Card';
+
 
 export const Home = () => {
     return (
@@ -69,62 +71,62 @@ export const Home = () => {
             <div className='our-data'>Comprueba cómo te podemos ayudar</div>
             <div className='are-confidence'>Conoce nuestros tratamientos</div>
         </div>
-        <Container className='all-treatments'>
-      <Row className='all-treatments-row'>
-        <Col className='treatment-single'>
-            <div className='cont-treatment'>
-                <img className='img-logo' src={implantImage} alt=""/>
-                <div className='title-treatment'>Implantología</div>
-                <p className='text-treatment'>Utilizamos implantes europeos de primera calidad, que tienen una<strong> tasa de éxito</strong> del 99% y que no se distinguen del resto de tus dientes.</p>
-                <Button className='appointment-free'>Saber más <i class="bi bi-chevron-right arrow"></i></Button>
-            </div>
-        </Col>
-        <Col className='treatment-single'>
-        <div className='cont-treatment'>
-            <img className='img-logo' src={dentalProtesis} alt=""/>
-            <div className='title-treatment'>Prótesis dentales</div>
-            <p className='text-treatment'>Colocamos prótesis que son muy naturales, no se notan, duran <strong>hasta 15 años</strong>  y te permiten volver a sonreír y comer con normalidad.</p>
-            <Button className='appointment-free'>Saber más <i classname="bi bi-chevron-right arrow"></i> </Button>
-        </div>
-        </Col>
-        <Col className='treatment-single'>
-            <div className='cont-treatment'>
-                <img className='img-logo' src={orthodontic} alt=""/>
-                <div className='title-treatment'>Ortodoncia</div>
-                <p className='text-treatment'>Realizamos tratamientos de ortodoncia tanto con <strong>alineadores transparentes</strong>  como con brackets (metálicos y de zafiro).</p>
-                <Button className='appointment-free'>Saber más <i class="bi bi-chevron-right arrow"></i> </Button>
-            </div>
-        </Col>
-      </Row>
-      <Row>
-      <Col className='treatment-single' xs>
-            <div className='cont-treatment'>
-                <img className='img-logo' src={odontology} alt=""/>
-                <div className='title-treatment'>Odontología General</div>
-                <p className='text-treatment'>Eliminamos las caries y las enfermedades de las encías (periodontitis o <strong>piorrea</strong>): empastes, endodoncias, curetajes...</p>
-                <Button className='appointment-free'>Saber más <i class="bi bi-chevron-right arrow"></i> </Button>
-            </div>
-        </Col>
-        <Col className='treatment-single' xs>
-            <div className='cont-treatment'>
-                <img className='img-logo' src={dentalEstetic} alt=""/>
-                <div className='title-treatment'>Estética dental</div>
-                <p className='text-treatment'>Llevamos a cabo tratamientos para mejorar y rejuvenecer la apariencia de la sonrisa: <strong>blanqueamiento y carillas. </strong>Varios descuentos disponibles.</p>
-                <Button className='appointment-free'>Saber más <i class="bi bi-chevron-right arrow"></i> </Button>
-            </div>
-        </Col>
-        <Col className='treatment-single' xs>
-            <div className='cont-treatment'>
-                <img className='img-logo' src={implantImage} alt=""/>
-                <div className='title-treatment'>Elevaciones maxilares</div>
-                <p className='text-treatment'>Utilizamos implantes europeos de primera calidad, que tienen una<strong> tasa de éxito</strong> del 99% y que no se distinguen del resto de tus dientes.</p>
-                <Button className='appointment-free'>Saber más <i class="bi bi-chevron-right arrow"></i> </Button>
-            </div>
-        </Col>
-      </Row>
-    </Container>
-    <Footer/>
-    </>
+        <Container>
+            <Row className='flex-row d-flex container-all-card '>
+                <Col md={6} lg={6} xl={4} xxl={4} className="card-container">
+                    <CardComponent
+                        image={implantImage}
+                        showButton={true} 
+                        title= "Implantología"
+                        text="Utilizamos implantes europeos de primera calidad, que tienen una tasa de éxito del 99% y que no se distinguen del resto de tus dientes."
+                    />
+                </Col>
+                <Col md={6} lg={6} xl={4} xxl={4} className="card-container">
+                    <CardComponent
+                        image={dentalProtesis}
+                        showButton={true} 
+                        title= "Prótesis dentales"
+                        text="Colocamos prótesis que son muy naturales, no se notan, duran hasta 15 años y te permiten volver a sonreír y comer con normalidad."
+                    />
+                </Col>
+                <Col md={6} lg={6} xl={4} xxl={4} className="card-container">
+                    <CardComponent
+                        image={orthodontic}
+                        showButton={true} 
+                        title= "Ortodoncia"
+                        text="Realizamos tratamientos de ortodoncia tanto con alineadores transparentes como con brackets (metálicos y de zafiro)."
+                    />
+                </Col>
+            </Row>
+            <Row>
+                <Col md={6} lg={6} xl={4} xxl={4} className="card-container">
+                    <CardComponent
+                        image={odontology}
+                        showButton={true} 
+                        title= "Odontología General"
+                        text="Eliminamos las caries y las enfermedades de las encías (periodontitis o <strong>piorrea</strong>): empastes, endodoncias, curetajes..."
+                    />
+                </Col>
+                <Col md={6} lg={6} xl={4} xxl={4} className="card-container">
+                    <CardComponent
+                        image={dentalEstetic}
+                        showButton={true} 
+                        title= "Estética dental"
+                        text="Llevamos a cabo tratamientos para mejorar y rejuvenecer la apariencia de la sonrisa: blanqueamiento y carillas. Varios descuentos disponibles."
+                    />
+                </Col>
+                <Col md={6} lg={6} xl={4} xxl={4} className="card-container">
+                    <CardComponent
+                        image={implantImage}
+                        showButton={true} 
+                        title= "Elevaciones maxilares"
+                        text="Utilizamos implantes europeos de primera calidad, que tienen una tasa de éxito del 99% y que no se distinguen del resto de tus dientes."
+                    />
+                </Col>
+            </Row>
+        </Container>
+        <Footer/>
+        </>
         
     )
 };

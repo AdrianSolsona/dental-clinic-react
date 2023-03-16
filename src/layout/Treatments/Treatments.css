@@ -31,3 +31,14 @@
 .card-container{
     margin-top: 3rem;
 }
+@media(max-width:768px){
+    .card-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    }
+    .titles{
+        font-size: 1.8rem;
+    }
+   
+}
