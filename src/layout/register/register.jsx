@@ -44,10 +44,10 @@ const newValue = ({target}) =>{
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
               <Form.Group className="form-group" controlId="formBasicPassword">
-                <Form.Control className='input-form'  type="email" placeholder="Contraseña" name="email" value={email} onChange={newValue}/>
+                <Form.Control className='input-form' type="email" placeholder="Contraseña" name="email" value={email} onChange={newValue}/>
               </Form.Group>
               <Form.Group className="form-group" controlId="formBasicPassword">
-                <Form.Control  className='input-form'type="email" placeholder="Usuario" name="nameUser" value={email} onChange={newValue}/>
+                <Form.Control  className='input-form' type="email" placeholder="Usuario" name="nameUser" value={email} onChange={newValue}/>
               </Form.Group>
               <Form.Group className="form-group" controlId="formBasicPassword">
                 <Form.Control className='input-form' type="email" placeholder="Nombre" name="name" value={email} onChange={newValue}/>

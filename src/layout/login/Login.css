@@ -45,3 +45,14 @@
     color: rgb(3, 45, 101);
     font-family: 'Exo', sans-serif;
 }
+@media(max-width:576px){
+    .input-form{
+        width: 20rem;
+    }
+    .form-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
