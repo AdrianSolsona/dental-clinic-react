@@ -4,6 +4,7 @@ import { NavBar } from "../../components/Navbar/NavBar"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Login.css'
+import { InputText } from "../../components/InputText/InputText";
 
 
 export const Login = () => {
@@ -16,16 +17,25 @@ export const Login = () => {
         <div className='container-icon'>
         <i class="bi bi-person-workspace icon-login"></i>
         </div>
-          <Form.Control className='input-form' type="email" placeholder="Email" />
+          <InputText 
+            type="email"
+            name="email"
+            placeholder="Email"
+            changeFunction={(e) => inputHandler(e)}
+            validateFunction={(e) => inputValidate(e)}
+          />
           <Form.Text className="text-muted">
             Tienes que introducir caracteres válidos.
           </Form.Text>
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control className='input-form' type="password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+          <InputText
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            changeFunction={(e) => inputHandler(e)}
+            validateFunction={(e) => inputValidate(e)}
+          />
         </Form.Group>
         <div className='btn-container'>
           <Button className='btn-login' variant="primary" type="submit">

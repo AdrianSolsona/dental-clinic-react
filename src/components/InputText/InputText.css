@@ -1,0 +1,36 @@
+.inputDesign {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.35rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-family: 'Exo', sans-serif;
+    border: 1px solid rgb(3, 45, 101);
+    margin-top: 1.5rem;
+
+  }
+  .inputDesign:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }  
+    .inputDesign:disabled {
+    background-color: #e9ecef;
+    opacity: 1;
+    }
+    .inputDesign[readonly] {
+    background-color: #e9ecef;
+    }
+    .inputDesign::placeholder{
+        color:rgb(185, 185, 185);
+        font-weight: 500;
+    }
