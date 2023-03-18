@@ -3,8 +3,10 @@ import { Footer } from "../../components/Footer/Footer"
 import { NavBar } from "../../components/Navbar/NavBar"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { ButtonAct } from "../../components/ButtonAct/ButtonAct";
 import './Login.css'
 import { InputText } from "../../components/InputText/InputText";
+import { validate } from "../../helpers/useful";
 import { useDispatch } from "react-redux";
 import { login } from "../userSlice";
 import { logMe } from "../../services/apiCalls";
@@ -144,30 +146,51 @@ export const Login = () => {
         <div className='container-icon'>
         <i class="bi bi-person-workspace icon-login"></i>
         </div>
-          <InputText 
-            type="email"
-            name="email"
-            placeholder="Email"
+          <InputText
+             className={
+              credencialesError.passwordError === ""
+                ? "inputBasicDesign"
+                : "inputBasicDesign inputErrorDesign"
+            }
+            type={"email"}
+            name={"email"}
+            placeholder={"Email"}
+            required={true}
             changeFunction={(e) => inputHandler(e)}
+            blurFunction={(e) => checkError(e)}
             validateFunction={(e) => inputValidate(e)}
           />
-          <Form.Text className="text-muted">
-            Tienes que introducir caracteres válidos.
-          </Form.Text>
+          <Form.Text className="text-danger">
+                {credencialesError.emailError}
+              </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <InputText
+             className={
+              credencialesError.passwordError === ""
+                ? "inputBasicDesign"
+                : "inputBasicDesign inputErrorDesign"
+            }
             type="password"
             name="password"
             placeholder="Contraseña"
+            required={true}
             changeFunction={(e) => inputHandler(e)}
+            blurFunction={(e) => checkError(e)}
             validateFunction={(e) => inputValidate(e)}
           />
+        <Form.Text className="text-danger">
+          {credencialesError.passwordError}
+        </Form.Text>
         </Form.Group>
+        
         <div className='btn-container'>
-          <Button className='btn-login' variant="primary" type="submit">
-            Login
-          </Button>
+        <ButtonAct 
+              className={loginAct ? "loginSendDeac loginSendAct" : "loginSendDeac"}
+              buttonName="Confirmar"
+            //   onClick={loginAct ? sendValue : () => {}}
+              onClick={loginAct ? logeame : () => {}}
+            />
         </div>
       </Form>
     </div>

@@ -1,4 +1,4 @@
-.inputDesign {
+.inputBasicDesign {
     display: block;
     width: 100%;
     padding: 0.375rem 0.75rem;
@@ -15,21 +15,25 @@
     border: 1px solid rgb(3, 45, 101);
     margin-top: 1.5rem;
   }
-  .inputDesign:focus {
+  .inputBasicDesign:focus {
     color: #495057;
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }  
-    .inputDesign:disabled {
+    .inputBasicDesign:disabled {
     background-color: #e9ecef;
     opacity: 1;
     }
-    .inputDesign[readonly] {
+    .inputBasicDesign[readonly] {
     background-color: #e9ecef;
     }
-    .inputDesign::placeholder{
+    .inputBasicDesign::placeholder{
         color:rgb(185, 185, 185);
         font-weight: 500;
+        font-family: 'Exo', sans-serif;
     }
+    .inputErrorDesign {
+      border: 0.2em solid red;
+  }
