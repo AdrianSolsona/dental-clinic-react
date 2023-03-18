@@ -17,12 +17,10 @@
     font-size: 4rem;
     color: rgb(3, 45, 101);
 }
-
 .btn-container{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 .btn-login{
     background-color: rgb(3, 45, 101);
