@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Footer } from "../../components/Footer/Footer"
 import { NavBar } from "../../components/Navbar/NavBar"
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { ButtonAct } from "../../components/ButtonAct/ButtonAct";
 import './Login.css'
@@ -183,14 +182,13 @@ export const Login = () => {
           {credencialesError.passwordError}
         </Form.Text>
         </Form.Group>
-        
-        <div className='btn-container'>
-        <ButtonAct 
-              className={loginAct ? "loginSendDeac loginSendAct" : "loginSendDeac"}
-              buttonName="Confirmar"
+        <div className="btn-container">
+          <ButtonAct 
+            className={loginAct ? "loginSendDeac loginSendAct" : "loginSendDeac"}
+            buttonName="Confirmar"
             //   onClick={loginAct ? sendValue : () => {}}
-              onClick={loginAct ? logeame : () => {}}
-            />
+            onClick={loginAct ? logeame : () => {}}
+          />
         </div>
       </Form>
     </div>

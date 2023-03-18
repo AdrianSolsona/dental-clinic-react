@@ -25,19 +25,8 @@
 .btn-container{
     display: flex;
     justify-content: center;
+    align-items: center;
 
-}
-.btn-login{
-    background-color: rgb(3, 45, 101);
-    border-color: rgb(3, 45, 101);
-    font-family: 'Exo', sans-serif;
-    width: 5rem;
-    margin-top: 2rem;
-}
-.btn-login:hover{
-    background-color: rgba(255, 255, 255, 0.74);
-    color: rgb(3, 45, 101);
-    font-family: 'Exo', sans-serif;
 }
 @media(max-width:576px){
     .input-form{
