@@ -29,6 +29,8 @@ import { Login } from '../layout/login/Login'
 import { Register } from '../layout/register/Register'
 import { Contact } from '../layout/contact/contact'
 import { Treatment } from '../layout/Treatments/Treatments'
+import { Profile} from '../layout/profile/Profile'
+import { Users } from '../layout/users/Users'
 
 
 
@@ -42,6 +44,8 @@ export const MainApp = () => {
         <Route path='/register' element={<Register/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/treatments' element={<Treatment/>}/>
+        <Route path="/profile" element={<Profile />}/>
+        <Route path="/users" element={<Users/>}/>
     </Routes>
     </>
   )

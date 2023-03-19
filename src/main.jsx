@@ -21,11 +21,11 @@ import store from './app/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <MainApp/>
-      </Provider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+          <MainApp/>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
 )
  

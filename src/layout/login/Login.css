@@ -28,6 +28,18 @@
     align-items: center;
 
 }
+.loginDesign {
+
+    height: 80vh;
+    width: 100vw;
+
+    background-color: rgb(243, 240, 240);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 @media(max-width:576px){
     .input-form{
         width: 20rem;
