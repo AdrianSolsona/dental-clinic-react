@@ -8,8 +8,11 @@ import './Register.css'
 import { InputText } from "../../components/InputText/InputText";
 import { validate } from "../../helpers/useful";
 import { registerUser } from "../../services/apiCalls";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
+
+  const navigate = useNavigate();
 
 //HOOKS............
 
@@ -79,6 +82,7 @@ export const Register = () => {
   //Funciones de ciclo de vida del componente, conocidas como useEffect
 
   // 3 - Ejecutamos los useEffect
+  const [welcome, setWelcome] = useState("");
 
   //Este tipo de useEffect siempre se ejecuta cuando se actualice cualquier hook.....
   useEffect(() => {
@@ -149,18 +153,28 @@ export const Register = () => {
   const userRegister = () => {
     registerUser(credenciales)
     console.log(credenciales)
+
+    setWelcome(`Gracias por confiar en nosotros`);
+
+                //Redirección a Home
+
+                setTimeout(() => {
+                  navigate("/home");
+                }, 3000);
+                 
   };
 
 
   /////////////////////////////////////////////////////
-
-
   return (
     <>
       <NavBar/>
       <div className='container-icon'>
         <i className="bi bi-person-workspace icon-login"></i>
       </div>
+      {welcome !== "" ? (
+            <div>{welcome}</div>
+          ) : (
       <Container className="container-register">
         <Row className="row-input">
           <Col md={12} lg={6} className="container-inputs">
@@ -311,7 +325,7 @@ export const Register = () => {
       </div>
         </Row>
       </Container>
-      
+      )}
       <Footer/>
     </>
         );

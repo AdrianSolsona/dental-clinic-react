@@ -37,7 +37,7 @@ export const Login = () => {
   const [loginAct, setLoginAct] = useState(false);
 
   
-    const [welcome, setWelcome] = useState("");
+  const [welcome, setWelcome] = useState("");
   
     useEffect(() => {
       if (credentialsRdx.credentials.token) {
