@@ -1,0 +1,44 @@
+.user-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40rem;
+    position: relative;
+    gap: 15rem;
+}
+.data-all{
+    font-family: 'Exo', sans-serif;
+    font-weight: 600;
+    color: rgb(3, 45, 101);
+    width: 20rem;
+}
+.phase-data{
+    color: rgb(26, 101, 199);
+}
+.all-btn{
+    display: flex;
+    gap: 3rem;
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-login{
+    background-color: rgb(3, 45, 101);
+    border-color: rgb(3, 45, 101);
+    font-family: 'Exo', sans-serif;
+    width: 8rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-login:hover{
+    background-color: rgba(255, 255, 255, 0.74);
+    color: rgb(3, 45, 101);
+    font-family: 'Exo', sans-serif;
+}
+.btn-2{
+    width: 11rem;
+}

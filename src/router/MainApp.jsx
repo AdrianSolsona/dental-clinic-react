@@ -31,6 +31,7 @@ import { Contact } from '../layout/contact/contact'
 import { Treatment } from '../layout/Treatments/Treatments'
 import { Profile} from '../layout/profile/Profile'
 import { Users } from '../layout/users/Users'
+import { Detail} from '../layout/detail/Detail'
 
 
 
@@ -46,6 +47,7 @@ export const MainApp = () => {
         <Route path='/treatments' element={<Treatment/>}/>
         <Route path="/profile" element={<Profile />}/>
         <Route path="/users" element={<Users/>}/>
+        <Route path="/detail" element={<Detail/>}/>
     </Routes>
     </>
   )

@@ -2,8 +2,11 @@ export const validate = (name, data, required) => {
     switch (name) {
       case "name":
       case "surname":
-      case "nombre":
+      case "address":
       case "apellido":
+      case "username":
+      case "gender": 
+      case "date_of_birth": 
         //Aqui evaluaremos strings que NO pueden tener números
   
         if (data === "" && required === true) {
@@ -36,13 +39,18 @@ export const validate = (name, data, required) => {
           return {message: "Invalid password format", validated: false};
         }
         return {message: "", validated: true};
-  
+      case "postcode":  
       case "phone":
       case "tfno":
       case "telefono":
       case "phonenumber":
-        break;
-  
+        if (data === "" && required === true) {
+          return {message: "Please fill the field", validated: false};
+        } else if (/\+?\(?\d{2,4}\)?[\d\s-]{12,}/.test(data)) {
+          return {message: "Invalid password format", validated: false};
+        }
+        return {message: "", validated: true};
+         
       case "dni":
       case "document":
       case "nif":

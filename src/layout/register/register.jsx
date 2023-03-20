@@ -1,4 +1,4 @@
-
+import { useEffect } from "react";
 import { Footer } from "../../components/Footer/Footer"
 import { NavBar } from "../../components/Navbar/NavBar"
 
@@ -6,29 +6,154 @@ import React, { useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import './Register.css'
 import { InputText } from "../../components/InputText/InputText";
+import { validate } from "../../helpers/useful";
+import { registerUser } from "../../services/apiCalls";
 
 export const Register = () => {
 
-  let user = {
+//HOOKS............
+
+  // 1 - Primero siempre se comprueba el valor de los hooks
+  const [credenciales, setCredenciales] = useState({
     name: "",
-    email: ""
-}
+    surname: "",
+    email: "",
+    password: "",
+    username: "",
+    phone: "",
+    address: "",
+    gender: "",
+    postcode: ""
+  });
 
-const [value, setValue] = useState(user);
-const {email,username} = value;
+  const [valiCredenciales, setValiCredenciales] = useState({
+    nameVali: false,
+    surnameVali: false,
+    emailVali: false,
+    passwordVali:false,
+    usernameVali:false,
+    addressVali: false,
+    phoneVali: false,
+    genderVali: false,
+    postcodeVali: false,
+  })
+
+  //Este hook consistirá en el lugar de guardado de mensajes de error, a priori estarán en comillas vacías
+  const [credencialesError, setCredencialesError] = useState({
+    nameError: "",
+    passwordError: "",
+    surnameError: "",
+    emailError: "",
+    usernameError: "",
+    addressError: "",
+    phoneError: "",
+    genderError: "",
+    postcodeError: "",
+  });
+
+  const [registerAct, setRegisterAct] = useState(false);
+
+  ///////////////////////////////////////////////////////////////////
+
+  //HANDLERS
+
+  const inputHandler = (e) => {
+    //inputHandler será la función adecuada para controlar el contenido que estamos introduciendo
+    //en los inputs, su forma de manejarlo será actualizar las partes correspondientes del hook según el input
+    //en el que estemos escribiendo
+
+    setCredenciales((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+      //Este método hace una copia del estado del componente con spread para no tener que mutar el estado original,
+      //posteriormente, mediante la técnica de diccionario de JS, asignamos el valor del input que esté escribiendose
+      //EN ESE MOMENTO a la parte correspondiente del Hook.
+    }));
+  };
+
+  //////////////////////////////////////////////////////////////////
 
 
-const newValue = ({target}) =>{
-    console.log(target)
+  //USEEFFECT
 
+  //Funciones de ciclo de vida del componente, conocidas como useEffect
 
-    const {name, value} = target;
-    setValue({
-        ...value,
-        [name]:value
+  // 3 - Ejecutamos los useEffect
+
+  //Este tipo de useEffect siempre se ejecuta cuando se actualice cualquier hook.....
+  useEffect(() => {
+ 
+
+    //Recorremos el primer for in para ver si hay errores en las credenciales....
+    for(let error in credencialesError){
+      if(credencialesError[error] !== ""){
+        setRegisterAct(false);
+        return;
+      }
     }
-    )
-}
+
+    //Recorremos las credenciales con otro for in para comprobar en este caso si algún campo se ha dejado por rellenar...
+    for(let vacio in credenciales){
+      if(credenciales[vacio] === ""){
+        setRegisterAct(false);
+        return;
+      }
+    }
+
+    //El último cortafuegos será un for in que recorrerá el hook valiCredenciales que mirará si todas las credenciales no sólo
+    //están rellenas, sino que también han sido validadas
+    for(let validated in valiCredenciales){
+      if(valiCredenciales[validated] === false){
+        setRegisterAct(false);
+        return;
+      }
+    }
+    //si llegamos a este punto es porque no hemos encontrado ningún error en el for in que recorre el hook de errores
+    setRegisterAct(true);
+  });
+
+  ////////////////////////////////////////////////////////////
+
+  //FUNCIONES
+  //Funcion de validacion
+
+  const checkError = (e) => {
+
+
+    let error = "";
+
+    let checked = validate(
+      e.target.name,
+      e.target.value,
+      e.target.required
+    );
+
+    error = checked.message;
+    
+    //Aqui seteamos el hook de las validaciones
+    console.log("asdfasdf",valiCredenciales)
+
+    setValiCredenciales((prevState) => ({
+      ...prevState,
+      [e.target.name + "Vali"]: checked.validated,
+    }));
+
+    //Aqui seteamos el hook de los errores
+
+    setCredencialesError((prevState) => ({
+      ...prevState,
+      [e.target.name + "Error"]: error,
+    }));
+  };
+
+  const userRegister = () => {
+    registerUser(credenciales)
+    console.log(credenciales)
+  };
+
+
+  /////////////////////////////////////////////////////
+
 
   return (
     <>
@@ -39,117 +164,154 @@ const newValue = ({target}) =>{
       <Container className="container-register">
         <Row className="row-input">
           <Col md={12} lg={6} className="container-inputs">
-              <InputText className="hola"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
+              <InputText className={
+                          credencialesError.emailError === ""
+                            ? "inputBasicDesign"
+                            : "inputBasicDesign inputErrorDesign"
+                        }
+                    type={"email"}
+                    name={"email"}
+                    placeholder={"Email"}
+                    required={true}
                     changeFunction={(e) => inputHandler(e)}
-                    validateFunction={(e) => inputValidate(e)}
-                    value={username}
-                    onChange={newValue}
+                    blurFunction={(e) => checkError(e)} 
                   />
+                  <div>{credencialesError.emailError}</div>
             
-                
-              
-                <InputText
-                  type="password"
-                  name="password"
-                  placeholder="Contraseña"
+                <InputText className={
+                          credencialesError.passwordError === ""
+                            ? "inputBasicDesign"
+                            : "inputBasicDesign inputErrorDesign"
+                        }
+                  type={"password"}
+                  name={"password"}
+                  placeholder={"Contraseña"}
+                  required={true}
                   changeFunction={(e) => inputHandler(e)}
-                  validateFunction={(e) => inputValidate(e)}
-                  value={username}
-                  onChange={newValue}
+                  blurFunction={(e) => checkError(e)}
                 />
+                <div>{credencialesError.passwordError}</div>
              
-              <InputText
-                  type="text"
-                  name="username"
-                  placeholder="Nombre de usuario"
+              <InputText className={
+                          credencialesError.usernameError === ""
+                            ? "inputBasicDesign"
+                            : "inputBasicDesign inputErrorDesign"
+                        }
+                  type={"text"}
+                  name={"username"}
+                  placeholder={"Nombre de usuario"}
+                  required={true}
                   changeFunction={(e) => inputHandler(e)}
-                  validateFunction={(e) => inputValidate(e)}
-                  value={username}
-                  onChange={newValue}
+                  blurFunction={(e) => checkError(e)} 
                 />
         
-                <InputText
-                    type="text"
-                    name="name"
-                    placeholder="Nombre"
+                <InputText className={
+                          credencialesError.nameError === ""
+                            ? "inputBasicDesign"
+                            : "inputBasicDesign inputErrorDesign"
+                        }
+                    type={"text"}
+                    name={"name"}
+                    placeholder={"Nombre"}
+                    required={true}
                     changeFunction={(e) => inputHandler(e)}
-                    validateFunction={(e) => inputValidate(e)}
-                    value={username}
-                    onChange={newValue}
+                    blurFunction={(e) => checkError(e)} 
+                    
                   />
               
-                <InputText
-                    type="text"
-                    name="surname"
-                    placeholder="Apellido"
+                <InputText className={
+                          credencialesError.surnameError === ""
+                            ? "inputBasicDesign"
+                            : "inputBasicDesign inputErrorDesign"
+                        }
+                    type={"text"}
+                    name={"surname"}
+                    placeholder={"Apellido"}
+                    required={true}
                     changeFunction={(e) => inputHandler(e)}
-                    validateFunction={(e) => inputValidate(e)}
-                    value={username}
-                    onChange={newValue}
+                    blurFunction={(e) => checkError(e)} 
+               
                   />
              
           </Col>
           <Col md={12} lg={6} className="container-inputs cont-inp-2">
             
-              <InputText
-                    type="text"
-                    name="address"
-                    placeholder="Dirección"
+              <InputText className={
+                          credencialesError.addressError === ""
+                            ? "inputBasicDesign"
+                            : "inputBasicDesign inputErrorDesign"
+                        }
+                    type={"text"}
+                    name={"address"}
+                    placeholder={"Dirección"}
+                    required={true}
                     changeFunction={(e) => inputHandler(e)}
-                    validateFunction={(e) => inputValidate(e)}
-                    value={username}
-                    onChange={newValue}
+                    blurFunction={(e) => checkError(e)} 
+                    
                   />
            
-              <InputText
-                    type="text"
-                    name="phone"
-                    placeholder="Teléfono"
+              <InputText className={
+                          credencialesError.phoneError === ""
+                            ? "inputBasicDesign"
+                            : "inputBasicDesign inputErrorDesign"
+                        }
+                    type={"text"}
+                    name={"phone"}
+                    placeholder={"Teléfono"}
+                    required={true}
                     changeFunction={(e) => inputHandler(e)}
-                    validateFunction={(e) => inputValidate(e)}
-                    value={username}
-                    onChange={newValue}
+                    blurFunction={(e) => checkError(e)} 
+                    
                   />
               
-              <InputText
-                    type="text"
-                    name="dateBirth"
-                    placeholder="Fecha de nacimiento"
-                    changeFunction={(e) => inputHandler(e)}
-                    validateFunction={(e) => inputValidate(e)}
-                    value={username}
-                    onChange={newValue}
-                  />
               
-              <InputText
-                    type="text"
-                    name="gendre"
-                    placeholder="Género"
+              <InputText className={
+                          credencialesError.genderError === ""
+                            ? "inputBasicDesign"
+                            : "inputBasicDesign inputErrorDesign"
+                        }
+                    type={"text"}
+                    name={"gender"}
+                    placeholder={"Género"}
+                    required={true}
                     changeFunction={(e) => inputHandler(e)}
-                    validateFunction={(e) => inputValidate(e)}
-                    value={username}
-                    onChange={newValue}
+                    blurFunction={(e) => checkError(e)} 
+                    
                   />
-              <InputText
-                    type="text"
-                    name="postal"
-                    placeholder="Codigo postal"
+
+              <InputText className={
+                          credencialesError.postcodeError === ""
+                            ? "inputBasicDesign"
+                            : "inputBasicDesign inputErrorDesign"
+                        }
+                    type={"text"}
+                    name={"postcode"}
+                    placeholder={"Codigo postal"}
+                    required={true}
                     changeFunction={(e) => inputHandler(e)}
-                    validateFunction={(e) => inputValidate(e)}
-                    value={username}
-                    onChange={newValue}
+                    blurFunction={(e) => checkError(e)} 
+                    
                   />
-              
-            
           </Col>
+          <div
+      type="submit"
+        className={
+          registerAct ? "registerSendDeac registerSendAct" : "registerSendDeac"
+        }
+        onClick={
+          //Si el hook registerAct es true, el onclick nos permitirá ejecutar la función que haría el registro....
+          registerAct
+            ? () => {
+                userRegister();
+              }
+            : () => {}
+        }
+      >
+        Register me!
+      </div>
         </Row>
       </Container>
-      <div className='btn-container'>
-        <Button className='btn-login' variant="primary" type="submit">Register</Button>
-      </div>
+      
       <Footer/>
     </>
         );

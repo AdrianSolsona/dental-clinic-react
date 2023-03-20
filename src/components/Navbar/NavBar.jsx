@@ -18,8 +18,6 @@ export const NavBar = () => {
         
     })
 
-  
-
     return (
             <Navbar className='all-nav'>
               <div className='row-nav'>
@@ -28,10 +26,11 @@ export const NavBar = () => {
                 </div>
                 <div className="">
                   {datosCredencialesRedux.credentials.token ? (
-                    <div>
+                    <div className='nav-init'>
                       <div>{datosCredencialesRedux?.credentials?.usuario?.name}</div>
-                      <div>logout</div>
                       <div onClick={()=>navigate("/users")}>users</div>
+                      <div onClick={()=>navigate("/profile")}>profile</div>
+                      <div>logout</div>
                     </div>
                   ) : (
                     <div className='nav-init'>

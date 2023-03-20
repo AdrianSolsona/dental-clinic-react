@@ -60,7 +60,7 @@ export const Login = () => {
     logMe(credenciales)
         .then(
             respuesta => {
-
+                console.log(respuesta)
                 let decodificado= decodeToken(respuesta.data.token)
                 let datosBackend = {
                     token: respuesta.data.token,
