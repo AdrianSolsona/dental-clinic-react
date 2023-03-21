@@ -26,3 +26,28 @@ export const registerUser = async (body) => {
   return await axios.post(`${root}users`, body)
 
 }
+
+export const appointmentsAll = async (token) => {
+  let config = {
+    headers: { 
+      'Authorization': 'Bearer '+ token,  
+    }
+  };
+
+  return await axios.get(`${root}appointments/doctor`, config)
+
+}
+
+export const bookAppointment = async (body, token) => {
+
+  let config = {
+    headers: { 
+      'Authorization': 'Bearer '+ token,  
+    }
+  };
+
+  return await axios.post(`${root}appointments`, body, config)
+
+}
+
+
