@@ -64,7 +64,7 @@ export const Login = () => {
                 let decodificado= decodeToken(respuesta.data.token)
                 let datosBackend = {
                     token: respuesta.data.token,
-                    usuario: decodificado
+                    usuario: "decoded" ,decodificado
                 }
 
                 console.log(datosBackend);

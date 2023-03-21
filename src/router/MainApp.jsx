@@ -32,6 +32,12 @@ import { Treatment } from '../layout/Treatments/Treatments'
 import { Profile} from '../layout/profile/Profile'
 import { Users } from '../layout/users/Users'
 import { Detail} from '../layout/detail/Detail'
+import { Appointment } from '../layout/appointments/appointments'
+import { NewAppointmentPage } from '../layout/createAppointment/createAppointment'
+
+
+
+
 
 
 
@@ -48,6 +54,9 @@ export const MainApp = () => {
         <Route path="/profile" element={<Profile />}/>
         <Route path="/users" element={<Users/>}/>
         <Route path="/detail" element={<Detail/>}/>
+        <Route path="/appointments" element={<Appointment/>}/>
+        <Route path="/createAppointments" element={<NewAppointmentPage/>}/>
+        
     </Routes>
     </>
   )

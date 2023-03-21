@@ -12,7 +12,7 @@ body{
 }
 .row-nav{
     display: flex;
-    gap: 28rem;
+    gap: 15rem;
     align-items: center;
 }
 .nav-init{
@@ -42,6 +42,7 @@ body{
 .sesion{
     display: flex;
 }
+
 @media(max-width: 1200px){
     .row-nav{
         gap: 17rem;
