@@ -34,6 +34,7 @@ import { Users } from '../layout/users/Users'
 import { Detail} from '../layout/detail/Detail'
 import { Appointment } from '../layout/appointments/appointments'
 import { NewAppointmentPage } from '../layout/createAppointment/createAppointment'
+import { AppointmentsAsClient } from '../layout/appointmentUser/appointmentUser'
 
 
 
@@ -56,6 +57,8 @@ export const MainApp = () => {
         <Route path="/detail" element={<Detail/>}/>
         <Route path="/appointments" element={<Appointment/>}/>
         <Route path="/createAppointments" element={<NewAppointmentPage/>}/>
+        <Route path="/appointments/book" element={<AppointmentsAsClient/>}/>
+
         
     </Routes>
     </>

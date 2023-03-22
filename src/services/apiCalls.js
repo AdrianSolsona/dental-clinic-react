@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const root = "http://localhost:3000/"
+const root = "https://goodsmile-production.up.railway.app/"
 
 /*export const bringUsers = async () => {
 
@@ -49,5 +49,17 @@ export const bookAppointment = async (body, token) => {
   return await axios.post(`${root}appointments`, body, config)
 
 }
+
+export const bringAppointments = async (token) => {
+  let config = {
+    headers: { 
+      'Authorization': 'Bearer '+ token,  
+    }
+  };
+
+  return await axios.get(`${root}appointments`, config);
+}
+
+
 
 
