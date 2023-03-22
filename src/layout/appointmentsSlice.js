@@ -1,31 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";  
 
-export const userSlice = createSlice({
+export const appointmentSlice = createSlice({
     name: 'appointment',
     initialState: {
-      credentials: {}
+        choosenAppointment : {}
     },
     reducers: {
-      login: (state, action) => {
-        return {
-          ...state,
-          ...action.payload
-        }
-      },
-      userout: (state, action) => {
-        return {
-          ...state,
-          ...action.payload
-        }
-      }
-      
+        addChoosenAppointment: (state, action) => {
+            return {
+                ...state,
+                ...action.payload
+            }
+        },
     }
-    
-});
+})
 
-//exporto las ACCIONES.....
-export const { login, userout } = userSlice.actions;
+export const { addChoosenAppointment } = appointmentSlice.actions;
 
-export const userData = (state) => state.user;
+export const appointmentData = (state) => state.appointment;
 
-export default userSlice.reducer;
+export default appointmentSlice.reducer;
+

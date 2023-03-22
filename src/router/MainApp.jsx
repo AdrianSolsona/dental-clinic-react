@@ -35,6 +35,7 @@ import { Detail} from '../layout/detail/Detail'
 import { Appointment } from '../layout/appointments/appointments'
 import { NewAppointmentPage } from '../layout/createAppointment/createAppointment'
 import { AppointmentsAsClient } from '../layout/appointmentUser/appointmentUser'
+import { ModifyAppointment } from '../layout/modifyAppointment/modifyAppointment'
 
 
 
@@ -58,6 +59,7 @@ export const MainApp = () => {
         <Route path="/appointments" element={<Appointment/>}/>
         <Route path="/createAppointments" element={<NewAppointmentPage/>}/>
         <Route path="/appointments/book" element={<AppointmentsAsClient/>}/>
+        <Route path="/modify/appointment" element={<ModifyAppointment/>}/>
 
         
     </Routes>
