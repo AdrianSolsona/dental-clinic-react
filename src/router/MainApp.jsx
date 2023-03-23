@@ -36,6 +36,8 @@ import { Appointment } from '../layout/appointments/appointments'
 import { NewAppointmentPage } from '../layout/createAppointment/createAppointment'
 import { AppointmentsAsClient } from '../layout/appointmentUser/appointmentUser'
 import { ModifyAppointment } from '../layout/modifyAppointment/modifyAppointment'
+import { ProfileData} from '../layout/profileData/profileData'
+import { ModifyUser } from '../layout/modifyUser/modifyUser'
 
 
 
@@ -60,8 +62,10 @@ export const MainApp = () => {
         <Route path="/createAppointments" element={<NewAppointmentPage/>}/>
         <Route path="/appointments/book" element={<AppointmentsAsClient/>}/>
         <Route path="/modify/appointment" element={<ModifyAppointment/>}/>
-
+        <Route path="/data/user" element={<ProfileData/>}/>
+        <Route path="/modify/user" element={<ModifyUser/>}/>
         
+
     </Routes>
     </>
   )

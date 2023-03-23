@@ -48,7 +48,7 @@ export const NavBar = () => {
                       <div onClick={()=>navigate("/users")}>users</div>
                       <div onClick={()=>navigate("/change")}>tipo acceso</div>
                       <div onClick={()=>navigate("/detail")}>detalles</div>
-                      <div>{datosCredencialesRedux?.credentials?.decodificado?.username}</div>
+                      <div onClick={()=>navigate("/data/user")}>{datosCredencialesRedux?.credentials?.decodificado?.username}</div>
                       <div onClick={() => {  navigate("/logout"); logoutFunction();}}>logout</div>
                   </div>  
                 </>       
@@ -69,8 +69,9 @@ export const NavBar = () => {
                       <Navigator ruta={"Inicio"} destino={"/home"} />
                       <Navigator ruta={"Tratamientos"} destino={"/treatments"} />
                       <div onClick={()=>navigate("/appointments/book")}>citas</div>
-                      <div>{datosCredencialesRedux?.credentials?.decodificado?.username}</div>
+                      <div onClick={()=>navigate("/data/user")}>{datosCredencialesRedux?.credentials?.decodificado?.username}</div>
                       <div onClick={()=>navigate("/createAppointments")}>crear cita</div>
+                      <div onClick={()=>navigate("/modify/user")}>Modificar</div>
                       <div onClick={() => {  navigate("/login"); logoutFunction();}}>Cerrar sesión</div>
                   </div>
                 </>
