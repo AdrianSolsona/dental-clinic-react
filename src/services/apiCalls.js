@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const root = "http://localhost:3000/"
+const root = "https://goodsmile-production.up.railway.app/"
 
 /*export const bringUsers = async () => {
 
@@ -60,7 +60,7 @@ export const bringAppointments = async (token) => {
   return await axios.get(`${root}appointments`, config);
 }
 
-export const updateAppointment = async (body, token) => {
+export const updateAppointment = async (id, body, token) => {
 
   let config = {
     headers: { 
@@ -68,10 +68,34 @@ export const updateAppointment = async (body, token) => {
     }
   };
 
-  return await axios.put(`${root}appointments`, body, config)
+  return await axios.put(`${root}appointments/${id}`, body, config)
 
 }
 
+
+
+export const dataUsers = async (token) => {
+  let config = {
+    headers: { 
+      'Authorization': 'Bearer '+ token,  
+    }
+  };
+
+  return await axios.get(`${root}users`, config);
+}
+
+export const updateProfile = async (dataUserUpdate, token) => {
+
+  let config = {
+    headers: { 
+      'Authorization': 'Bearer '+ token,  
+    }
+  };
+
+  console.log(token);
+
+  return await axios.put(`${root}users`, dataUserUpdate, config);
+}
 
 
 

@@ -11,7 +11,7 @@ import  appointmentSlice  from '../layout/appointmentsSlice';
 const reducers = combineReducers({
     user: userSlice,
     details: detailSlice,
-    appointments: appointmentSlice
+    appointment: appointmentSlice
     
 })
 

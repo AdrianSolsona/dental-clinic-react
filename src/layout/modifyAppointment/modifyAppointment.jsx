@@ -1,21 +1,20 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { InputText } from '../../components/InputText/InputText';
 import { updateAppointment } from '../../services/apiCalls';
-import { appointmentData, addChoosenAppointment } from '../appointmentsSlice'
+import { appointmentData } from '../appointmentsSlice';
 import { userData } from '../userSlice';
+
+
 
 export const ModifyAppointment = () => {
 
-  const dispatch = useDispatch();
-
-  const appoimentSelectedRdx = useSelector(appointmentData);
-  const credentialsRdx = useSelector(userData);
-
   const [dataAppointment, setDataAppointment] = useState({
-    date: appoimentSelectedRdx.choosenAppointment.date,
-    // add other properties of the appointment here
-  });
+    date: "",
+
+  })
+
+  
 
   const inputHandler = (e) => {
     setDataAppointment((prevState) => ({
@@ -23,32 +22,80 @@ export const ModifyAppointment = () => {
       [e.target.name]: e.target.value,
     }));
   };
+  //console.log(appointmentData)
+  const credentialsRdx = useSelector(userData);
+  //console.log(credentialsRdx)
+  const appointmentRdx = useSelector(appointmentData)
+  //console.log(appointmentRdx)
+  //console.log(choosenAppointment)
 
-  const updateApp = async () => {
-    try {
-      await updateAppointment(dataAppointment, credentialsRdx.credentials.token);
-      dispatch(addChoosenAppointment(dataAppointment));
-      console.log('Appointment updated successfully!');
-    } catch (error) {
-      console.log('Error updating appointment:', error);
-    }
+  let appointmentId = appointmentRdx.choosenAppointment.id; 
+  console.log(appointmentId)
+  const checkError = (e) => {};
+
+  const updateApp = () => {
+    console.log("entro en submit");  
+    updateAppointment( appointmentId, dataAppointment, credentialsRdx.credentials.token);
+    console.log(updateAppointment)
+    
+ 
   };
 
   return (
     <>
-      <div>
-        {appoimentSelectedRdx.choosenAppointment.date }
-        <InputText
-          type={"datetime-local"}
-          name={"date"}
-          required={true}
-          value={dataAppointment.date}
-          onChange={(e) => inputHandler(e)}
-        />
-      </div>
-      <div onClick={() => updateApp()}>
-        Submit
-      </div>
-    </>
-  );
-};
+    <div>
+
+   
+    {/* {appoimentSelectedRdx.choosenAppointment.id }
+    <InputText
+                  // className={
+                  //   credentialsError.nameError === ""
+                  //     ? "inputBasicDesign"
+                      
+                  //     : "inputBasicDesign inputErrorDesign"
+                  // }
+                  type={"text"}
+                  name={"name"}
+                  placeholder="Name"
+                  required={true}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                /> */}
+    <br />
+    
+    <InputText
+                  // className={
+                  //   credentialsError.nameError === ""
+                  //     ? "inputBasicDesign"
+                      
+                  //     : "inputBasicDesign inputErrorDesign"
+                  // }
+                  type={"datetime-local"}
+                  name={"date"}
+                  
+                  required={true}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+  </div>
+    <div
+    // type="submit"
+    // className={
+    //   updateAppointmentAct
+    //     ? "registerSendDeac registerSendAct text-center"
+    //     : "registerSendDeac text-center"
+    // }
+    onClick={
+      // updateAppointmentAct
+        () => { 
+          updateApp();
+          
+        //   }
+        // : () => {}
+    }}
+  >
+    Submit
+  </div>
+</>
+  )
+}
