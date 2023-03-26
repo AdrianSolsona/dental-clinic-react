@@ -41,7 +41,7 @@ Technologies used:
  </div>
 
 ## Diagram BD
-!['imagen-db'](./images/baseDatos.JPG)
+!['imagen-db'](./src/assets/baseDatos.JPG)
 
 ## Installation in local🚀
 1. Clone the repository
