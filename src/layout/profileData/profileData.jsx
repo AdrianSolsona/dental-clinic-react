@@ -9,6 +9,8 @@ import { userData } from "../userSlice";
 import { addChoosen } from '../detailSlice';
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
+import { NavBar } from '../../components/Navbar/NavBar';
+import { Footer } from '../../components/Footer/Footer';
 
 
 export const ProfileData = () => {
@@ -43,23 +45,37 @@ export const ProfileData = () => {
         dispatch(addChoosen({ choosenObject: persona }))
 
         setTimeout(()=>{
-            navigate("/detail");
+            navigate("/modify/user");
         },500)
     }
     
      return (
+        <>
+        <NavBar/>
+        <div className='all-container'>
+        
          <div className='usersDesign'>
-
-            
-
-
-
-           { users.username }
-           { users.email }
-           { users.surname }
-           
-
+            <div className='icon-user'><i class="bi bi-person-bounding-box"></i></div>
+            <div className='line-1'>Email:<div className='data-user'>{ users.email }</div></div>
+            <div className='line-1'>Nombre de usuario:<div className='data-user'>{ users.username }</div></div>
+            <div className='line-1'>Nombre:<div className='data-user'>{ users.name }</div></div>
+            <div className='line-1'>Teléfono:<div className='data-user'>{ users.phone }</div></div>
+            <div className='line-1'>Dirección:<div className='data-user'>{ users.address }</div></div>
+            <div className='line-1'>Codigo Postal:<div className='data-user'>{ users.postcode}</div></div>
+            <div className='line-1'>Género:<div className='data-user'>{ users.gender }</div></div>
+            <div className='confirm'
+                onClick={
+                    () => { 
+                    selected();
+                }}
+            >
+                Modificar mis datos
+            </div>
          </div>
+       
+        </div>
+         <Footer/>
+         </>
      )
 }
 
