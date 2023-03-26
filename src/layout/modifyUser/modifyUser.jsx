@@ -159,13 +159,13 @@ export const ModifyUser = () => {
     updateProfile(credenciales, token)
     console.log()
 
-    setWelcome(`Gracias por confiar en nosotros`);
+    setWelcome(`¡Tus cambios se han guardado correctamente!`);
 
                 //Redirección a Home
 
                 setTimeout(() => {
-                  navigate("/home");
-                }, 3000);
+                  navigate("/data/user");
+                }, 2000);
                  
   };
 
@@ -178,7 +178,7 @@ export const ModifyUser = () => {
         <i className="bi bi-person-workspace icon-login"></i>
       </div>
       {welcome !== "" ? (
-            <div>{welcome}</div>
+            <div className='date-confirm'>{welcome}</div>
           ) : (
       <Container className="container-register">
         <Row className="row-input">
@@ -312,23 +312,25 @@ export const ModifyUser = () => {
                     
                   />
           </Col>
-          <div
-      type="submit"
-        className={
-          registerAct ? "registerSendDeac registerSendAct" : "registerSendDeac"
-        }
-        onClick={
-          //Si el hook registerAct es true, el onclick nos permitirá ejecutar la función que haría el registro....
-          registerAct
-            ? () => {
-                userRegister();
-              }
-            : () => {}
-        }
-      >
-        Register me!
-      </div>
         </Row>
+        <div className="continer-btn">
+            <div
+              type="submit"
+                className={
+                  registerAct ? "loginSendDeac loginSendAct" : "loginSendDeac"
+                }
+                onClick={
+                  //Si el hook registerAct es true, el onclick nos permitirá ejecutar la función que haría el registro....
+                  registerAct
+                    ? () => {
+                        userRegister();
+                      }
+                    : () => {}
+                }
+              >
+                Confirmar cambios
+            </div>
+        </div>
       </Container>
       )}
       <Footer/>
