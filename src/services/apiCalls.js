@@ -96,6 +96,37 @@ export const updateProfile = async (dataUserUpdate, token) => {
 
   return await axios.put(`${root}users`, dataUserUpdate, config);
 }
+/*
+export const deleteAppointment = async ( id, token) => {
+
+  let config = {
+    headers: { 
+      'Authorization': 'Bearer '+ token,  
+    }
+  };
+
+  return await axios.delete(`${root}appointments/${id}`, config)
+
+}*/
+
+export const deleteMyAppointment = async (id, token) => {
+  let config = {
+    headers: { 
+      'Authorization': 'Bearer '+ token,  
+    }
+  };
+  return await axios.delete(`${root}appointments/${id}`, config)
+}
+
+export const bringAllAppointmentsAsDoctor = async (token) => {
+  let config = {
+    headers: { 
+      'Authorization': 'Bearer '+ token,  
+    }
+  };
+  return await axios.get(`${root}appointments/alldoctor`, config);
+
+}
 
 
 
