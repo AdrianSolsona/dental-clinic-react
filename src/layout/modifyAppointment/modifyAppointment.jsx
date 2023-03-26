@@ -1,19 +1,26 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
+import { Footer } from '../../components/Footer/Footer';
 import { InputText } from '../../components/InputText/InputText';
+import { NavBar } from '../../components/Navbar/NavBar';
 import { updateAppointment } from '../../services/apiCalls';
 import { appointmentData } from '../appointmentsSlice';
 import { userData } from '../userSlice';
+import './modifyAppointment.css'
+import { useNavigate } from 'react-router-dom';
 
 
 
 export const ModifyAppointment = () => {
+
+  const navigate = useNavigate();
 
   const [dataAppointment, setDataAppointment] = useState({
     date: "",
 
   })
 
+  const [welcome, setWelcome] = useState("");
   
 
   const inputHandler = (e) => {
@@ -37,6 +44,11 @@ export const ModifyAppointment = () => {
     console.log("entro en submit");  
     updateAppointment( appointmentId, dataAppointment, credentialsRdx.credentials.token);
     console.log(updateAppointment)
+      setWelcome(`¡Fecha modificada con exito!`);
+      setTimeout(()=>{
+        
+        navigate("/appointments/book");
+    },1000)
     
  
   };
@@ -44,26 +56,15 @@ export const ModifyAppointment = () => {
   return (
     <>
     <div>
-
-   
-    {/* {appoimentSelectedRdx.choosenAppointment.id }
-    <InputText
-                  // className={
-                  //   credentialsError.nameError === ""
-                  //     ? "inputBasicDesign"
-                      
-                  //     : "inputBasicDesign inputErrorDesign"
-                  // }
-                  type={"text"}
-                  name={"name"}
-                  placeholder="Name"
-                  required={true}
-                  changeFunction={(e) => inputHandler(e)}
-                  blurFunction={(e) => checkError(e)}
-                /> */}
-    <br />
-    
-    <InputText
+    <NavBar/>
+    {welcome !== "" ? (
+            <div className='date-confirm'>{welcome}</div>
+            
+          ) : (
+    <div className='all-time'>
+    <div className='time-container'>
+    <div className='icon-appointment'><i class="bi bi-calendar3"></i></div>
+    <InputText className="datetime-btn"
                   // className={
                   //   credentialsError.nameError === ""
                   //     ? "inputBasicDesign"
@@ -77,8 +78,7 @@ export const ModifyAppointment = () => {
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
-  </div>
-    <div
+                <div className='confirm'
     // type="submit"
     // className={
     //   updateAppointmentAct
@@ -94,8 +94,14 @@ export const ModifyAppointment = () => {
         // : () => {}
     }}
   >
-    Submit
+    Confirmar
   </div>
+    </div>
+    </div>
+          )}
+    </div>
+    
+  <Footer/>
 </>
   )
 }
