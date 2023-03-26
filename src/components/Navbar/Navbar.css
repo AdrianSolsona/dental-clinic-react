@@ -22,6 +22,7 @@ body{
     display: flex;
     gap: 2rem;
     font-weight: 600;
+    cursor: pointer;
 }
 .nav-menu{
     gap: 1.5rem;
@@ -45,12 +46,19 @@ body{
 
 @media(max-width: 1200px){
     .row-nav{
-        gap: 17rem;
+        gap: 15rem;
     }
 }
 @media(max-width: 1000px){
     .row-nav{
         gap: 3.5rem;
+    }
+}
+@media(max-width: 854px){
+    .row-nav{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
     }
 }
 @media(max-width: 772px){

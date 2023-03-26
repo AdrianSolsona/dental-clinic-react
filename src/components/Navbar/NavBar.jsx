@@ -35,7 +35,7 @@ export const NavBar = () => {
                 {!datosCredencialesRedux?.credentials?.decodificado?.rolId ? (
                 <> 
                   <div className='nav-init'>
-                      <Navigator ruta={"Inicio"} destino={"/home"} />
+                      <Navigator ruta={"Inicio"} destino={"/"} />
                       <Navigator ruta={"Tratamientos"} destino={"/treatments"} />
                       <Navigator ruta={"Registro"} destino={"/register"} />
                       <Navigator ruta={"Inicio sesion"} destino={"/login"} />
@@ -45,20 +45,19 @@ export const NavBar = () => {
                 datosCredencialesRedux?.credentials?.decodificado?.rolId === 1 ? (
                 <> 
                   <div className='nav-init'>
-                      <div onClick={()=>navigate("/users")}>users</div>
-                      <div onClick={()=>navigate("/change")}>tipo acceso</div>
-                      <div onClick={()=>navigate("/detail")}>detalles</div>
+                      <Navigator ruta={"Inicio"} destino={"/"} />
+                      <div onClick={()=>navigate("/users")}>Usuarios</div>
                       <div onClick={()=>navigate("/data/user")}>{datosCredencialesRedux?.credentials?.decodificado?.username}</div>
-                      <div onClick={() => {  navigate("/logout"); logoutFunction();}}>logout</div>
+                      <div onClick={() => {  navigate("/login"); logoutFunction();}}>Cerrar sesión</div>
                   </div>  
                 </>       
     
                 ) : datosCredencialesRedux?.credentials?.decodificado?.rolId === 2 ? (
                 <>
                   <div className='nav-init'>
-                      <Navigator ruta={"Inicio"} destino={"/home"} />
+                      <Navigator ruta={"Inicio"} destino={"/"} />
                       <Navigator ruta={"Tratamientos"} destino={"/treatments"} />
-                      <div onClick={()=>navigate("/appointments")}>citas pacientes</div>
+                      <div onClick={()=>navigate("/appointments")}>Citas</div>
                       <div>{datosCredencialesRedux?.credentials?.decodificado?.username}</div>
                       <div onClick={() => {  navigate("/login"); logoutFunction();}}>Cerrar sesión</div>
                   </div>
@@ -66,13 +65,11 @@ export const NavBar = () => {
                 ) :datosCredencialesRedux?.credentials?.decodificado?.rolId === 3 ? (
                   <>
                   <div className='nav-init'>
-                      <Navigator ruta={"Inicio"} destino={"/home"} />
+                      <Navigator ruta={"Inicio"} destino={"/"} />
                       <Navigator ruta={"Tratamientos"} destino={"/treatments"} />
-                      <div onClick={()=>navigate("/appointments/book")}>citas</div>
+                      <div onClick={()=>navigate("/appointments/book")}>Citas</div>
                       <div onClick={()=>navigate("/data/user")}>{datosCredencialesRedux?.credentials?.decodificado?.username}</div>
-                      <div onClick={()=>navigate("/createAppointments")}>crear cita</div>
-                      <div onClick={()=>navigate("/modify/user")}>Modificar</div>
-                      <div onClick={() => {  navigate("/login"); logoutFunction();}}>Cerrar sesión</div>
+                      <div onClick={() => { navigate("/login"); logoutFunction();}}>Cerrar sesión</div>
                   </div>
                 </>
                 ) : (
