@@ -2,11 +2,6 @@ import axios from 'axios'
 
 const root = "https://goodsmile-production.up.railway.app/"
 
-/*export const bringUsers = async () => {
-
-    return await axios.get("https://dummyjson.com/users")
-};*/
-
 export const logMe = async(body) => {
     return await axios.post(`${root}login`, body)
 }
@@ -72,8 +67,6 @@ export const updateAppointment = async (id, body, token) => {
 
 }
 
-
-
 export const dataUsers = async (token) => {
   let config = {
     headers: { 
@@ -96,18 +89,6 @@ export const updateProfile = async (dataUserUpdate, token) => {
 
   return await axios.put(`${root}users`, dataUserUpdate, config);
 }
-/*
-export const deleteAppointment = async ( id, token) => {
-
-  let config = {
-    headers: { 
-      'Authorization': 'Bearer '+ token,  
-    }
-  };
-
-  return await axios.delete(`${root}appointments/${id}`, config)
-
-}*/
 
 export const deleteMyAppointment = async (id, token) => {
   let config = {

@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Home } from '../layout/home/Home'
@@ -32,9 +31,6 @@ export const MainApp = () => {
         <Route path="/data/user" element={<ProfileData/>}/>
         <Route path="/modify/user" element={<ModifyUser/>}/>
         <Route path="/appointments/dentist" element={<AppointmentsAsDentist/>}/>
-
-        
-
     </Routes>
     </>
   )

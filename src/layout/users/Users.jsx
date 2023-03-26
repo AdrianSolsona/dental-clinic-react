@@ -7,8 +7,6 @@ import { NavBar } from '../../components/Navbar/NavBar';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Footer } from '../../components/Footer/Footer';
 
-
-
 export const Users = () => {
 
     const [users, setUsers] = useState([]);
@@ -16,7 +14,7 @@ export const Users = () => {
     const ReduxCredentials = useSelector(userData);
 
     useEffect(()=>{
-        //console.log(users.length)
+       
         if(users.length === 0){
 
             bringUsers(ReduxCredentials.credentials.token)
@@ -38,9 +36,7 @@ export const Users = () => {
         <div className='your-appointments'>Todas los usuarios</div>
         <Container>
             { users.length > 0 ? 
-                
                 (<Row>
-
                     {
                         users.map(
                             persona => {

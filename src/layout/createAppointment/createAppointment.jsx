@@ -8,22 +8,14 @@ import { userData } from '../userSlice';
 import './createAppointment.css'
 import { useNavigate } from 'react-router-dom';
 
-
-
-
-
-
 export const NewAppointmentPage = () => {
 
   const navigate = useNavigate();
 
-    const credentialsRdx = useSelector(userData);
-console.log(credentialsRdx)
+  const credentialsRdx = useSelector(userData);
+
   const [infoAppointment, setInfoAppointment] = useState({
     date: "",
-    // user_id: credentialsRdx.credentials.user.userId
-    // service_id: 1,
-    // doctor_id: 1
 
   });
 
@@ -58,17 +50,12 @@ console.log(credentialsRdx)
     }
     setBookAppointmentAct(true);
   });
+
   const checkError = (e) => {};
-
-
-
-    // if (credentialsRdx.credentials.token) {
-
 
   const bookApp = () => {
     
     bookAppointment(infoAppointment, credentialsRdx.credentials.token);
-    console.log(infoAppointment);
     setWelcome(`¡Nueva cita realizada con exito!`);
     setTimeout(()=>{
       
@@ -77,46 +64,38 @@ console.log(credentialsRdx)
   };
 
       return (
-
         <>
-    <div>
-    <NavBar/>
-    {welcome !== "" ? (
-            <div className='date-confirm'>{welcome}</div>
-            
-          ) : (
-    <div className='all-time'>
-    <div className='time-container'>
-    <div className='icon-appointment'><i class="bi bi-calendar3"></i></div>
-    <InputText className="datetime-btn"
-                  // className={
-                  //   credentialsError.nameError === ""
-                  //     ? "inputBasicDesign"
-                      
-                  //     : "inputBasicDesign inputErrorDesign"
-                  // }
-                  type={"datetime-local"}
-                  name={"date"}
+        <div>
+        <NavBar/>
+          {welcome !== "" ? (
+                  <div className='date-confirm'>{welcome}</div>
                   
-                  required={true}
-                  changeFunction={(e) => inputHandler(e)}
-                  blurFunction={(e) => checkError(e)}
-                />
-                <div className='confirm'
-    onClick={
-        () => { 
-          bookApp();
-    }}
-  >
-    Confirmar cita nueva
-  </div>
-    </div>
-    </div>
-          )}
-    </div>
+                ) : (
+                  <div className='all-time'>
+                  <div className='time-container'>
+                  <div className='icon-appointment'><i class="bi bi-calendar3"></i></div>
+                  <InputText className="datetime-btn"        
+                                type={"datetime-local"}
+                                name={"date"}
+                                required={true}
+                                changeFunction={(e) => inputHandler(e)}
+                                blurFunction={(e) => checkError(e)}
+                              />
+                              <div className='confirm'
+                  onClick={
+                      () => { 
+                        bookApp();
+                  }}
+                >
+          Confirmar cita nueva
+          </div>
+          </div>
+          </div>
+                )}
+          </div>
     
-  <Footer/>
-</>
+        <Footer/>
+      </>
   );              
 
 }

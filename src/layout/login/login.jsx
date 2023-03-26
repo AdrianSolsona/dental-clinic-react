@@ -41,7 +41,7 @@ export const Login = () => {
   
     useEffect(() => {
       if (credentialsRdx.credentials.token) {
-        //Si No token...home redirect
+        
         navigate("/");
       }
     }, []);
@@ -67,15 +67,10 @@ export const Login = () => {
                     usuario: "decoded" ,decodificado
                 }
                 
-                
-                //Este es el momento en el que guardo en REDUX
                 dispatch(login({credentials: datosBackend}));
                 
-                //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
                 setWelcome(`Bienvenid@ de nuevo`);
                 
-                //Redirección a Home
-
                 setTimeout(() => {
                   navigate("/");
                 }, 2000);
@@ -103,11 +98,9 @@ export const Login = () => {
               passwordError : "",
             }));
           }
-
           break;
 
-          default:
-            
+          default:          
     }
   };
 
@@ -140,8 +133,6 @@ export const Login = () => {
     let error = "";
 
     let checked = validate(e.target.name, e.target.value, e.target.required);
-
-
 
     error = checked.message;
 

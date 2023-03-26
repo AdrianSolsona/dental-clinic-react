@@ -29,13 +29,10 @@ export const ModifyAppointment = () => {
       [e.target.name]: e.target.value,
     }));
   };
-  //console.log(appointmentData)
+  
   const credentialsRdx = useSelector(userData);
-  //console.log(credentialsRdx)
   const appointmentRdx = useSelector(appointmentData)
-  //console.log(appointmentRdx)
-  //console.log(choosenAppointment)
-
+ 
   let appointmentId = appointmentRdx.choosenAppointment.id; 
   console.log(appointmentId)
   const checkError = (e) => {};
@@ -50,7 +47,6 @@ export const ModifyAppointment = () => {
         navigate("/appointments/book");
     },1000)
     
- 
   };
 
   return (
@@ -65,43 +61,25 @@ export const ModifyAppointment = () => {
     <div className='time-container'>
     <div className='icon-appointment'><i class="bi bi-calendar3"></i></div>
     <InputText className="datetime-btn"
-                  // className={
-                  //   credentialsError.nameError === ""
-                  //     ? "inputBasicDesign"
-                      
-                  //     : "inputBasicDesign inputErrorDesign"
-                  // }
                   type={"datetime-local"}
                   name={"date"}
-                  
                   required={true}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
                 <div className='confirm'
-    // type="submit"
-    // className={
-    //   updateAppointmentAct
-    //     ? "registerSendDeac registerSendAct text-center"
-    //     : "registerSendDeac text-center"
-    // }
-    onClick={
-      // updateAppointmentAct
-        () => { 
-          updateApp();
-          
-        //   }
-        // : () => {}
-    }}
-  >
-    Confirmar
-  </div>
-    </div>
-    </div>
-          )}
-    </div>
-    
-  <Footer/>
+                    onClick={                     
+                        () => { 
+                          updateApp();
+                    }}
+                  >
+                    Confirmar
+                  </div>
+                    </div>
+                    </div>
+                          )}
+                    </div>
+    <Footer/>
 </>
   )
 }

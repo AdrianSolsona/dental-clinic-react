@@ -61,8 +61,6 @@ export const ModifyUser = () => {
 
   const [registerAct, setRegisterAct] = useState(false);
 
-  ///////////////////////////////////////////////////////////////////
-
   //HANDLERS
 
   const inputHandler = (e) => {
@@ -78,9 +76,6 @@ export const ModifyUser = () => {
       //EN ESE MOMENTO a la parte correspondiente del Hook.
     }));
   };
-
-  //////////////////////////////////////////////////////////////////
-
 
   //USEEFFECT
 
@@ -121,8 +116,6 @@ export const ModifyUser = () => {
     setRegisterAct(true);
   });
 
-  ////////////////////////////////////////////////////////////
-
   //FUNCIONES
   //Funcion de validacion
 
@@ -157,7 +150,6 @@ export const ModifyUser = () => {
 
   const userRegister = () => {
     updateProfile(credenciales, token)
-    console.log()
 
     setWelcome(`¡Tus cambios se han guardado correctamente!`);
 
@@ -165,12 +157,9 @@ export const ModifyUser = () => {
 
                 setTimeout(() => {
                   navigate("/data/user");
-                }, 2000);
-                 
+                }, 2000);       
   };
 
-
-  /////////////////////////////////////////////////////
   return (
     <>
       <NavBar/>

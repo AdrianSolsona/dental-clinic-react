@@ -1,9 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './profileData.css';
-
 import { dataUsers } from '../../services/apiCalls';
-
-//Conexion a REDUX
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { addChoosen } from '../detailSlice';
@@ -23,7 +20,6 @@ export const ProfileData = () => {
     const navigate = useNavigate();
 
     useEffect(()=>{
-        //console.log(users.length)
         if(users.length === 0){
 
             dataUsers(ReduxCredentials.credentials.token)

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Footer } from "../../components/Footer/Footer"
 import { NavBar } from "../../components/Navbar/NavBar"
-
 import React, { useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import './Register.css'
@@ -56,8 +55,6 @@ export const Register = () => {
 
   const [registerAct, setRegisterAct] = useState(false);
 
-  ///////////////////////////////////////////////////////////////////
-
   //HANDLERS
 
   const inputHandler = (e) => {
@@ -73,9 +70,6 @@ export const Register = () => {
       //EN ESE MOMENTO a la parte correspondiente del Hook.
     }));
   };
-
-  //////////////////////////////////////////////////////////////////
-
 
   //USEEFFECT
 
@@ -116,13 +110,10 @@ export const Register = () => {
     setRegisterAct(true);
   });
 
-  ////////////////////////////////////////////////////////////
-
   //FUNCIONES
   //Funcion de validacion
 
   const checkError = (e) => {
-
 
     let error = "";
 
@@ -164,8 +155,6 @@ export const Register = () => {
                  
   };
 
-
-  /////////////////////////////////////////////////////
   return (
     <>
       <NavBar/>

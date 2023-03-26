@@ -39,8 +39,7 @@ export const AppointmentsAsClient = () => {
       }, 500)
     }
   },[appointments])
-  // const appointmentRdx = useSelector(appointmentData)
-  console.log(appointments);
+  
   const appointmentSelected = (appointment) => {
     dispatch(addChoosenAppointment({ choosenAppointment: appointment }))
     console.log(addChoosenAppointment({ choosenAppointment: appointment }))
@@ -48,17 +47,13 @@ export const AppointmentsAsClient = () => {
       navigate('/modify/appointment');
     }, 1000)
   }
-  // console.log( appointments[0].id)
   const deleteApp =  async (appointment) =>{
-    // if(appointments.length > 0) {
     await deleteMyAppointment(  appointment.id,credentialsRdx.credentials.token)
     setAppointments(prevAppointments => prevAppointments.filter(a => a.id !== appointment.id));
-    // setAppointments([])
-    // }
 }
 
 if (loading) {
-  return <Spinner animation="border" variant="primary" /> ;
+  return  <div className='date-confirm'>Cargando tus citas</div>;
 } else if (appointments.length > 0) {
   return(
   <>

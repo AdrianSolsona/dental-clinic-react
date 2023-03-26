@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { bringAllAppointmentsAsDoctor } from '../../services/apiCalls';
@@ -14,10 +13,6 @@ export const AppointmentsAsDentist = () => {
     const [allAppointments, setAllAppointments] = useState([]);
 
   const credentialsRdx = useSelector(userData)
-  console.log(credentialsRdx)
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
 
@@ -33,7 +28,6 @@ export const AppointmentsAsDentist = () => {
         )
         .catch(error => console.log(error))
     }
-
   },[allAppointments])
 
   return (
@@ -70,25 +64,16 @@ export const AppointmentsAsDentist = () => {
                               <div className='treatment-line'>
                               <div className='line-1'>Duración:</div> <div> {appointment.Treatment.duration}</div>
                               </div>
-                            <div className='all-buttons'>
-                            <div onClick = {()=>navigate("/appointments/dentist")} className= "deleteDesign">
-                              Ir a mis citas
-                            </div>
-                            </div>
                           </div>
                         </div>
                       </Col>
                     )
                   }
                 )
-
               }  
               </Row>)
-              
               :
-
               (<div className='date-confirm'>CARGANDO TUS CITAS...</div>)
-            
       }
         </Container>
       <Footer/>
