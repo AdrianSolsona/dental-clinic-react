@@ -37,9 +37,61 @@
     color: rgb(3, 45, 101);
     font-family: 'Exo', sans-serif;
 }
+.registerSendDeac {
+
+    color: #fff;
+    background-color: rgb(3, 45, 101);
+    border-color: #007bff;
+    font-family: 'Exo', sans-serif;
+    border-radius: 0.4rem; /* Agrega un borde redondeado */
+    padding: 0.5rem 1rem; /* Agrega un padding a los lados */
+    font-size: 1rem; /* Tamaño de fuente */
+    margin-top: 3rem;
+    line-height: 1.5; /* Altura de línea */
+    text-align: center; /* Alineación de texto */
+    text-decoration: none; /* Elimina la subraya del enlace si se aplica */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón */
+    transition: all 0.15s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+}
+.registerSendAct {
+    
+    cursor: pointer;
+    background-color: rgb(26, 101, 199);
+    width: 12rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.registerSendAct:hover {
+
+    transition: 1s;
+    /*background-color: darkred;*/
+    background-color: rgba(255, 255, 255, 0.74);
+    color: rgb(3, 45, 101);
+    font-family: 'Exo', sans-serif;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media(max-width:992px){
     .row-input{
         width: 28rem;
+    }
+}
+@media(max-width:500px){
+    .row-input{
+        width: 20rem;
     }
 }
 

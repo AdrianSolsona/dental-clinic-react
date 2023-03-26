@@ -17,7 +17,7 @@ export const Treatment = () => {
             <Container>
                 <Row className='flex-row d-flex container-all-card '>
                     <div className="titles">Implantología<i class="bi bi-arrow-right-short arrow-title"></i></div>
-                    <Col md={6} lg={6} xl={4} xxl={4} className="card-container">
+                    <Col sm={12} md={12} lg={6} xl={6} xxl={4} className="card-container">
                         <CardComponent 
                             image={implantImage}
                             showButton={true} 
@@ -133,7 +133,7 @@ export const Treatment = () => {
             <Container>
                 <Row className='flex-row d-flex container-all-card '>
                     <div className="titles">Estética dental<i class="bi bi-arrow-right-short arrow-title"></i></div>
-                    <Col md={6} lg={6} xl={4} xxl={4} className="card-container">
+                    <Col md={6} lg={6} xl={4} xxl={4} className="card-container card-final">
                         <CardComponent 
                             image={dentalEstetic}
                             showButton={true} 
@@ -141,7 +141,7 @@ export const Treatment = () => {
                             text="Se colocan en la superficie frontal de los dientes con la finalidad de mejorar la estética y la simetría de la sonrisa..."
                             />
                     </Col>
-                    <Col md={6} lg={6} xl={4} xxl={4}className="card-container" >
+                    <Col md={6} lg={6} xl={4} xxl={4}className="card-container card-final" >
                         <CardComponent 
                             image={dentalEstetic}
                             showButton={true} 
@@ -149,11 +149,11 @@ export const Treatment = () => {
                             text="Es uno de los tratamientos estéticos más solicitados por nuestros pacientes en clínica..."
                         />
                     </Col>
-                    <Col md={12} lg={12} xl={4} xxl={4} className="card-container">
+                    <Col md={12} lg={12} xl={4} xxl={4} className="card-container card-final">
                         <CardComponent 
                             image={dentalEstetic}
                             showButton={true} 
-                            title= "Limpieza dental avanzada"
+                            title= "Limpieza avanzada"
                             text="Es una técnica de higiene bucal basada en la acción del polvo de bicarbonato de sodio..."
                         />
                     </Col>        

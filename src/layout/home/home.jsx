@@ -105,7 +105,7 @@ export const Home = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md={6} lg={6} xl={4} xxl={4} className="card-container">
+                <Col md={6} lg={6} xl={4} xxl={4} className="card-container card-final">
                     <CardComponent
                         image={odontology}
                         showButton={true} 

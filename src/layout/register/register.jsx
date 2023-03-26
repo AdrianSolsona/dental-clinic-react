@@ -159,8 +159,8 @@ export const Register = () => {
                 //Redirección a Home
 
                 setTimeout(() => {
-                  navigate("/home");
-                }, 3000);
+                  navigate("/");
+                }, 2000);
                  
   };
 
@@ -307,22 +307,24 @@ export const Register = () => {
                     
                   />
           </Col>
-          <div
-      type="submit"
-        className={
-          registerAct ? "registerSendDeac registerSendAct" : "registerSendDeac"
-        }
-        onClick={
-          //Si el hook registerAct es true, el onclick nos permitirá ejecutar la función que haría el registro....
-          registerAct
-            ? () => {
-                userRegister();
-              }
-            : () => {}
-        }
-      >
-        Register me!
-      </div>
+          <div className="container-btn">
+            <div
+              type="submit"
+                className={
+                  registerAct ? "registerSendDeac registerSendAct" : "registerSendDeac"
+                }
+                onClick={
+                  //Si el hook registerAct es true, el onclick nos permitirá ejecutar la función que haría el registro....
+                  registerAct
+                    ? () => {
+                        userRegister();
+                      }
+                    : () => {}
+                }
+              >
+                Registrarse
+            </div>
+          </div>
         </Row>
       </Container>
       )}

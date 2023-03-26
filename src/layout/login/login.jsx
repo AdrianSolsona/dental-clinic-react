@@ -60,25 +60,25 @@ export const Login = () => {
     logMe(credenciales)
         .then(
             respuesta => {
-                console.log(respuesta)
+                
                 let decodificado= decodeToken(respuesta.data.token)
                 let datosBackend = {
                     token: respuesta.data.token,
                     usuario: "decoded" ,decodificado
                 }
-
-                console.log(datosBackend);
+                
+                
                 //Este es el momento en el que guardo en REDUX
                 dispatch(login({credentials: datosBackend}));
-
+                
                 //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
-                setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.username}`);
-
+                setWelcome(`Bienvenid@ de nuevo`);
+                
                 //Redirección a Home
 
                 setTimeout(() => {
-                  navigate("/home");
-                }, 3000);
+                  navigate("/");
+                }, 2000);
                     }
                 )
         .catch(error => console.log(error))
@@ -107,7 +107,7 @@ export const Login = () => {
           break;
 
           default:
-            console.log("uff....")
+            
     }
   };
 

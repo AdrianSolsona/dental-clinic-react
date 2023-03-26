@@ -152,6 +152,9 @@ body{
 .data-all{
     color: rgb(64, 64, 64);
     font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .know-treatments{
     display: flex;
@@ -197,6 +200,9 @@ body{
 .arrow{
     font-size: 0.8rem;
     margin-left: 0.5rem;
+}
+.card-final{
+    margin-bottom: 4rem;
 }
 @media(max-width:1600px){
     
