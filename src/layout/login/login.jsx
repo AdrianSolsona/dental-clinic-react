@@ -69,7 +69,7 @@ export const Login = () => {
                 
                 dispatch(login({credentials: datosBackend}));
                 
-                setWelcome(`Bienvenid@ de nuevo`);
+                setWelcome(`¡Bienvenid@ de nuevo!`);
                 
                 setTimeout(() => {
                   navigate("/");
@@ -156,7 +156,7 @@ export const Login = () => {
       <NavBar />
         <div className="loginDesign">
           {welcome !== "" ? (
-            <div>{welcome}</div>
+            <div className="date-confirm">{welcome}</div>
           ) : (
             <div className='all-form'>
               <Form className='form-info'>

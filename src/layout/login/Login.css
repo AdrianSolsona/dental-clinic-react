@@ -40,6 +40,16 @@
     justify-content: center;
     align-items: center;
 }
+.date-confirm{
+    color: rgb(3, 45, 101);
+    font-family: 'Exo', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 15rem;
+    margin-bottom: 15rem;
+}
 @media(max-width:576px){
     .input-form{
         width: 20rem;

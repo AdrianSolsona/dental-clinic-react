@@ -59,7 +59,7 @@ export const ProfileData = () => {
             <div className='line-1'>Dirección:<div className='data-user'>{ users.address }</div></div>
             <div className='line-1'>Codigo Postal:<div className='data-user'>{ users.postcode}</div></div>
             <div className='line-1'>Género:<div className='data-user'>{ users.gender }</div></div>
-            <div className='confirm'
+            <div className='confirm btn-1'
                 onClick={
                     () => { 
                     selected();

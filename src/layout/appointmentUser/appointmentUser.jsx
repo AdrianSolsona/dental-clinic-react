@@ -53,7 +53,7 @@ export const AppointmentsAsClient = () => {
 }
 
 if (loading) {
-  return  <div className='date-confirm'>Cargando tus citas</div>;
+  return  <div className='date-confirm'>Cargando tus citas...</div>;
 } else if (appointments.length > 0) {
   return(
   <>

@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom'
 import { Home } from '../layout/home/Home'
 import { Login } from '../layout/login/Login'
 import { Register } from '../layout/register/Register'
-import { Contact } from '../layout/contact/contact'
 import { Treatment } from '../layout/Treatments/Treatments'
 import { Users } from '../layout/users/Users'
 import { Appointment } from '../layout/appointments/appointments'
@@ -21,7 +20,6 @@ export const MainApp = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/contact' element={<Contact/>}/>
         <Route path='/treatments' element={<Treatment/>}/>
         <Route path="/users" element={<Users/>}/>
         <Route path="/appointments" element={<Appointment/>}/>

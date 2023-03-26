@@ -81,7 +81,7 @@ export const NewAppointmentPage = () => {
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                               />
-                              <div className='confirm'
+                              <div className='confirm btn-1'
                   onClick={
                       () => { 
                         bookApp();

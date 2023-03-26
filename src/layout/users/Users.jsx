@@ -47,7 +47,7 @@ export const Users = () => {
                                         className= "cont-treatment-1"
                                         >
                                         <div>
-                                        <div className='icon-1'><i class="bi bi-journal-text"></i></div>
+                                        <div className='icon-1'><i class="bi bi-person-bounding-box"></i></div>
                                         </div>
                                         <div className='treatment-line'>
                                         <div className='line-1'>Username:</div><div> {persona.username}</div>
