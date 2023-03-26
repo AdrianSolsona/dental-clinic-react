@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react'
 import { bookAppointment } from '../../services/apiCalls';
 import { Footer } from "../../components/Footer/Footer"
 import { NavBar } from "../../components/Navbar/NavBar"
-import { Col, Container, Row } from 'react-bootstrap';
 import { InputText } from "../../components/InputText/InputText";
 import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
+import './createAppointment.css'
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -13,6 +14,8 @@ import { userData } from '../userSlice';
 
 
 export const NewAppointmentPage = () => {
+
+  const navigate = useNavigate();
 
     const credentialsRdx = useSelector(userData);
 console.log(credentialsRdx)
@@ -23,6 +26,8 @@ console.log(credentialsRdx)
     // doctor_id: 1
 
   });
+
+  const [welcome, setWelcome] = useState("");
 
   const inputHandler = (e) => {
     setInfoAppointment((prevState) => ({
@@ -64,48 +69,54 @@ console.log(credentialsRdx)
     
     bookAppointment(infoAppointment, credentialsRdx.credentials.token);
     console.log(infoAppointment);
+    setWelcome(`¡Nueva cita realizada con exito!`);
+    setTimeout(()=>{
+      
+      navigate("/appointments/book");
+  },1000)
   };
 
-
-      /////////////////////////////////////////////////////
       return (
+
         <>
-          <NavBar/>
-          <div className='container-icon'>
-            <i className="bi bi-person-workspace icon-login"></i>
-          </div>
-          <Container className="container-register">
-            <Row className="row-input">
-              <Col md={12} lg={6} className="container-inputs">
-                  <InputText className={ "inputBasicDesign"}
-                        type={"datetime-local"}
-                        name={"date"}
-                        required={true}
-                        changeFunction={(e) => inputHandler(e)}
-                        blurFunction={(e) => checkError(e)} 
-                      />
+    <div>
+    <NavBar/>
+    {welcome !== "" ? (
+            <div className='date-confirm'>{welcome}</div>
+            
+          ) : (
+    <div className='all-time'>
+    <div className='time-container'>
+    <div className='icon-appointment'><i class="bi bi-calendar3"></i></div>
+    <InputText className="datetime-btn"
+                  // className={
+                  //   credentialsError.nameError === ""
+                  //     ? "inputBasicDesign"
                       
-                </Col>   
-              <div
-          type="submit"
-            className={
-              BookAppointmentAct ? "registerSendDeac registerSendAct" : "registerSendDeac"
-            }
-            onClick={
-              //Si el hook registerAct es true, el onclick nos permitirá ejecutar la función que haría el registro....
-              BookAppointmentAct
-                ? () => {
-                    bookApp();
-                  }
-                : () => {}
-            }
-          >
-            Register me!
-          </div>
-            </Row>
-          </Container>
-          <Footer/>
-        </>
-            );              
+                  //     : "inputBasicDesign inputErrorDesign"
+                  // }
+                  type={"datetime-local"}
+                  name={"date"}
+                  
+                  required={true}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+                <div className='confirm'
+    onClick={
+        () => { 
+          bookApp();
+    }}
+  >
+    Confirmar cita nueva
+  </div>
+    </div>
+    </div>
+          )}
+    </div>
+    
+  <Footer/>
+</>
+  );              
 
 }
