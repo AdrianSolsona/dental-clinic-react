@@ -1,19 +1,21 @@
 import React, {useState, useEffect} from 'react'
-
-
-//Conexion a REDUX
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { addChoosen } from '../detailSlice';
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { appointmentsAll } from '../../services/apiCalls';
+import { NavBar } from '../../components/Navbar/NavBar';
+import { Col, Container, Row } from 'react-bootstrap';
+import { Footer } from '../../components/Footer/Footer';
+import Moment from 'moment';
+import './appointments.css'
 
 
 export const Appointment = () => {
 
     const [appointment, setAppointment] = useState([]);
-
+    
 
     const ReduxCredentials = useSelector(userData);
     console.log(ReduxCredentials)
@@ -38,41 +40,58 @@ export const Appointment = () => {
 
     },[appointment])
 
-   
-
      return (
-         <div className='usersDesign'>
-
+        <>
+        <NavBar/>
+        <div className='your-appointments'>Todas las citas</div>
+            <Container>
             { appointment.length > 0 ? 
-                
-                (<div>
-
+                (<Row>
                     {
                         appointment.map(
                             tag => {
                                 return (
-                                    <div 
-                                    
-                                        key={tag.id}>
-
-                                        {tag.status}
-                                        
-
-                                    </div>
+                                    <Col key={tag.id} sm="12" md="6" lg="6" xl="6" xxl="4">
+                                        <div className='container-int'>
+                                            <div
+                                            className= "cont-treatment-1"
+                                            >
+                                            <div>
+                                            <div className='icon-appointment'><i class="bi bi-journal-text"></i></div>
+                                            </div>
+                                            <div className='treatment-line'>
+                                            <div className='line-1'>Hora:</div><div>{Moment(tag.date).format('DD/MM/YYYY HH:mm:ss')}</div>
+                                            </div>
+                                            <div className='treatment-line'>
+                                            <div className='line-1'>Estado:</div><div> {tag.status}</div>
+                                            </div>
+                                            <div className='treatment-line'>
+                                            <div className='line-1'>NºTratamiento:</div><div> {tag.treatment_id}</div>
+                                            </div>
+                                            <div className='treatment-line'>
+                                            <div className='line-1'>NºPaciente:</div><div> {tag.pacient_id}</div>
+                                            </div>
+                                            <div className='all-buttons'>
+                                            <div onClick = {()=>navigate("/appointments/dentist")} className= "deleteDesign">
+                                                Ir a mis citas
+                                            </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </Col>
                                 )
                             }
                         )
                     }
 
-
-                </div>)
-
+                </Row>)
                 : 
-
-                (<div>ESTAN VINIENDO</div>)
-
+                
+                (<div className='date-confirm'>CARGANDO TODAS LAS CITAS...</div>)
+                
             }
-
-         </div>
+            </Container>
+         <Footer/>
+         </>
      )
 }
