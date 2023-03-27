@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavBar } from '../../components/Navbar/NavBar';
 import peopleSunrise from '../../assets/people-sunrise.jpg';
-import clinicUbication from '../../assets/clinic-vlc.jpeg'
+import clinicUbication from '../../assets/clinic-vlc.jpg'
 import implantImage from '../../assets/implantologiadef.jpg'
 import dentalProtesis from '../../assets/protesis-dentales.jpg'
 import orthodontic from '../../assets/ortodoncia.jpg'
