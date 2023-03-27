@@ -150,7 +150,7 @@ export const Register = () => {
                 //Redirección a Home
 
                 setTimeout(() => {
-                  navigate("/");
+                  navigate("/login");
                 }, 2000);
                  
   };
@@ -162,7 +162,7 @@ export const Register = () => {
         <i className="bi bi-person-workspace icon-login"></i>
       </div>
       {welcome !== "" ? (
-            <div>{welcome}</div>
+            <div className="date-confirm">{welcome}</div>
           ) : (
       <Container className="container-register">
         <Row className="row-input">
