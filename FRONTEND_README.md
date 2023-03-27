@@ -1,4 +1,4 @@
-# Welcome to my frontend app  
+# Welcome to my frontend app React dental clinic 
 
 <details>
   <summary>Content 📝</summary>
